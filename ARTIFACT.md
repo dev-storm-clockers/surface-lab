@@ -10,10 +10,10 @@
 - **root:** /workspace/surface-lab
 - **slug:** surface-lab
 - **owner_agent:** Build Head
-- **ready_for_quality:** no
+- **ready_for_quality:** yes
 - **pass:** 1
-- **live_url:** (pending Pages)
-- **notes:** CoS local green; Build owning Pages ship. NightDeck/Dungeon Dad untouched.
+- **live_url:** https://dev-storm-clockers.github.io/surface-lab/
+- **notes:** CoS local green + Build live HTTP smoke PASS on Pages `bbee8f5`. Prefer morning STOP-GO. NightDeck/Dungeon Dad untouched. No Lilly from Build.
 
 
 ## Browse
