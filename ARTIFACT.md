@@ -10,10 +10,10 @@
 - **root:** /workspace/surface-lab
 - **slug:** surface-lab
 - **owner_agent:** Build Head
-- **ready_for_quality:** no
-- **pass:** Money Brief Gumroad CTAs (local)
+- **ready_for_quality:** yes
+- **pass:** Money Brief Gumroad CTAs (live `3214318`)
 - **live_url:** https://dev-storm-clockers.github.io/surface-lab/money-brief/
-- **notes:** Gumroad Buy CTAs wired locally via money-brief/gumroad.json + gumroad.js. Stub Gumroad-shaped URLs until Phil pastes real product links. **ready_for_quality: no** for this Gumroad pass (local smoke only; no Pages push this turn). ND/DD/Meridian/Lilly untouched. No Stripe.
+- **notes:** Gumroad Buy CTAs wired locally via money-brief/gumroad.json + gumroad.js. Stub Gumroad-shaped URLs until Phil pastes real product links. **ready_for_quality: yes** live smoke PASS @ `3214318`. ND/DD/Meridian/Lilly untouched. No Stripe.
 
 ## Browse
 
@@ -161,7 +161,7 @@ Shared:
 - **path:** `money-brief/` → `/workspace/surface-lab/money-brief/index.html`
 - **live_url (Pages):** https://dev-storm-clockers.github.io/surface-lab/money-brief/
 - **local:** http://127.0.0.1:8765/money-brief/
-- **ready_for_quality:** no (Gumroad CTA pass — local only this turn; flip after Pages smoke)
+- **ready_for_quality:** yes (live smoke PASS @ `3214318`)
 - **buy CTA:** Buy on Gumroad — config-driven (`money-brief/gumroad.json` + `money-brief/gumroad.js`); opens new tab
 - **gumroad config:** `money-brief/gumroad.json`
   - Keys: `editorialTwin`, `tokenPack`, `diffKit`, `packPro` (optional Buy), `commercial` (null = note-only)
