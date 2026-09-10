@@ -16,3 +16,8 @@
 ## Pass 2 (Phil 2026-09-10 keep going)
 - Expand gallery: 2–3 new patterns (cafe, SaaS waitlist, event) + stronger 3D + Pass 1 nit fixes
 - Prefer one pass then STOP; Pages-first; Lilly only if Phil yes
+
+## Pass 3 (Phil 2026-09-10)
+- 3 new landings: brutalist portfolio, soft luxury spa, dark neon venue — max style contrast
+- Pass 2 → design-refs; monetization later (don’t block)
+- Prefer one pass then STOP; Pages-first
