@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Ledgerline — SaaS Waitlist Sample</title>
+  <meta name="description" content="Ledgerline waitlist: product hero, features, email signup UI only." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="saas.css" />
+</head>
+<body>
+  <header class="top wrap">
+    <a class="logo" href="./">Ledgerline</a>
+    <a class="nav-link" href="#waitlist">Join waitlist</a>
+  </header>
+
+  <main>
+    <section class="hero wrap">
+      <div class="hero-copy">
+        <p class="eyebrow">Finance ops · invite-only beta</p>
+        <h1>Close the books without the scramble.</h1>
+        <p class="lede">
+          Ledgerline stitches bank feeds, invoices, and approvals into one calm
+          workspace — built for teams that outgrew spreadsheets.
+        </p>
+        <a class="btn" href="#waitlist">Request early access</a>
+        <p class="tech-note">3D: real three.js WebGL product mesh</p>
+      </div>
+      <div class="hero-visual" aria-label="WebGL product orb">
+        <canvas id="mesh-canvas"></canvas>
+      </div>
+    </section>
+
+    <section class="features wrap" aria-label="Product features">
+      <article class="feat">
+        <div class="icon" aria-hidden="true">◎</div>
+        <h2>Live reconciliation</h2>
+        <p>Match transactions as they land. Rules you can read, not black-box magic.</p>
+      </article>
+      <article class="feat">
+        <div class="icon" aria-hidden="true">⬡</div>
+        <h2>Approval lanes</h2>
+        <p>Route spend by team or vendor with clear SLAs and audit-ready history.</p>
+      </article>
+      <article class="feat">
+        <div class="icon" aria-hidden="true">▣</div>
+        <h2>Month-end pack</h2>
+        <p>Export a clean close pack in one click — board-ready, not binder-ready.</p>
+      </article>
+    </section>
+
+    <section id="waitlist" class="waitlist wrap">
+      <div class="wait-card">
+        <h2>Join the waitlist</h2>
+        <p>UI only — no email is stored or sent. Demo for Surface Lab.</p>
+        <form id="wait-form" novalidate>
+          <label for="email">Work email</label>
+          <div class="row">
+            <input id="email" name="email" type="email" placeholder="you@company.com" required autocomplete="email" />
+            <button class="btn" type="submit">Join</button>
+          </div>
+          <p id="wait-msg" class="msg" role="status" hidden>You’re on the list (demo only).</p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="foot wrap">
+    <p>Ledgerline · fictional Surface Lab sample</p>
+    <a href="../../index.html">&larr; Gallery</a>
+  </footer>
+
+  <script type="importmap">
+  {
+    "imports": {
+      "three": "https://unpkg.com/three@0.160.0/build/three.module.js"
+    }
+  }
+  </script>
+  <script type="module" src="saas.js"></script>
+</body>
+</html>

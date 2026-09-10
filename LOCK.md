@@ -12,3 +12,7 @@
 
 ## Phil agree
 - **2026-09-10:** Pass 1 saved as team design references (`design-refs/`).
+
+## Pass 2 (Phil 2026-09-10 keep going)
+- Expand gallery: 2–3 new patterns (cafe, SaaS waitlist, event) + stronger 3D + Pass 1 nit fixes
+- Prefer one pass then STOP; Pages-first; Lilly only if Phil yes

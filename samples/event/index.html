@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>North Pier Sessions — Event Sample</title>
+  <meta name="description" content="North Pier Sessions meetup: date, venue, agenda, RSVP UI only." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="event.css" />
+</head>
+<body>
+  <header class="top wrap">
+    <a class="logo" href="./">North Pier <span>Sessions</span></a>
+    <a class="pill" href="#rsvp">RSVP</a>
+  </header>
+
+  <main>
+    <section class="hero wrap">
+      <div class="hero-copy">
+        <p class="eyebrow">Live talks · harbor nights</p>
+        <h1>October Sessions</h1>
+        <p class="meta">
+          <strong>Sat Oct 18 · 6:30pm</strong>
+          <span>North Pier Pavilion · fictional Quay District</span>
+        </p>
+        <p class="lede">Three short talks, one open jam, and a pier walk under the lights. Free for neighbors — RSVP so we know how many chairs.</p>
+        <a class="btn" href="#rsvp">Save my seat</a>
+        <p class="tech-note">3D: CSS ticket stack + flip RSVP card</p>
+      </div>
+
+      <div class="ticket-stage" aria-label="3D ticket stack">
+        <div class="ticket-stack" tabindex="0">
+          <article class="ticket t3" aria-hidden="true">
+            <span class="t-label">Guest</span>
+            <span class="t-title">Pier Pass</span>
+          </article>
+          <article class="ticket t2" aria-hidden="true">
+            <span class="t-label">Admit one</span>
+            <span class="t-title">Session B</span>
+          </article>
+          <article class="ticket t1">
+            <span class="t-label">Admit one</span>
+            <span class="t-title">North Pier</span>
+            <span class="t-date">Oct 18 · 6:30</span>
+            <span class="t-stub">NPS-018</span>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="agenda wrap" aria-label="Agenda">
+      <h2>Agenda</h2>
+      <div class="agenda-strip">
+        <article>
+          <time>6:30</time>
+          <h3>Doors &amp; harbor tea</h3>
+          <p>Check in at the pavilion desk</p>
+        </article>
+        <article>
+          <time>7:00</time>
+          <h3>Talks (3 × 12m)</h3>
+          <p>Making, maps, and night photography</p>
+        </article>
+        <article>
+          <time>7:50</time>
+          <h3>Open jam</h3>
+          <p>Bring a verse, a sketch, or just listen</p>
+        </article>
+        <article>
+          <time>8:30</time>
+          <h3>Pier walk</h3>
+          <p>Optional — lanterns provided</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="rsvp" class="rsvp wrap">
+      <h2>RSVP</h2>
+      <p class="rsvp-lead">UI only — nothing is submitted. Flip the card after you “confirm.”</p>
+
+      <div class="rsvp-stage">
+        <div id="rsvp-card" class="rsvp-card" aria-live="polite">
+          <div class="rsvp-inner">
+            <div class="rsvp-face front">
+              <form id="rsvp-form">
+                <label>Name<input type="text" name="name" placeholder="Your name" required autocomplete="name" /></label>
+                <label>Email<input type="email" name="email" placeholder="you@example.com" required autocomplete="email" /></label>
+                <label>Guests
+                  <select name="guests">
+                    <option value="1" selected>Just me</option>
+                    <option value="2">+1</option>
+                    <option value="3">+2</option>
+                  </select>
+                </label>
+                <button class="btn" type="submit">Confirm RSVP</button>
+              </form>
+            </div>
+            <div class="rsvp-face back">
+              <p class="ok-label">You’re on the list</p>
+              <p class="ok-detail" id="ok-detail">See you at the pavilion.</p>
+              <button type="button" class="btn ghost" id="rsvp-reset">Edit RSVP</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="foot wrap">
+    <p>North Pier Sessions · fictional Surface Lab sample</p>
+    <a href="../../index.html">&larr; Gallery</a>
+  </footer>
+
+  <script src="event.js" defer></script>
+</body>
+</html>

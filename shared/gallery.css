@@ -141,3 +141,16 @@ img { max-width: 100%; display: block; }
   background: linear-gradient(135deg, #f3ebe0 0%, #d4a574 55%, #5c3d2e 100%);
   color: #2a1a12;
 }
+
+.pv-cafe {
+  background: linear-gradient(145deg, #2a3220 0%, #3f4a2e 45%, #c4a574 100%);
+  color: #f4efe4;
+}
+.pv-saas {
+  background: linear-gradient(150deg, #0f1724 0%, #1a2436 50%, #2dd4bf 100%);
+  color: #e8eef8;
+}
+.pv-event {
+  background: linear-gradient(160deg, #0b1026 0%, #1a2148 55%, #ff6b6b 100%);
+  color: #e8ecff;
+}

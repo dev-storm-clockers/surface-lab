@@ -1,31 +1,38 @@
-# Surface Lab — Pass 1 ARTIFACT
+# Surface Lab — Pass 2 ARTIFACT
 
 **Company:** Surface Lab (temporary design-research label)  
-**Pass:** 1 — page design research + light 3D  
-**Built:** 2026-09-10 (UTC) / 2026-09-09 evening AT  
-**Scope:** Local static gallery only. No NightDeck / Dungeon Dad changes.
+**Pass:** 2 — expand gallery + stronger 3D + Pass 1 nit fixes  
+**Built:** 2026-09-10 (UTC) / 2026-09-10 morning AT  
+**Scope:** Local static gallery only. No NightDeck / Dungeon Dad changes. No Lilly.
 
 ## Build gate
 
 - **root:** /workspace/surface-lab
 - **slug:** surface-lab
 - **owner_agent:** Build Head
-- **ready_for_quality:** yes
-- **pass:** 1
+- **ready_for_quality:** no
+- **pass:** 2
 - **live_url:** https://dev-storm-clockers.github.io/surface-lab/
-- **notes:** CoS local green + Build live HTTP smoke PASS on Pages `bbee8f5`. Prefer morning STOP-GO. NightDeck/Dungeon Dad untouched. No Lilly from Build.
-
+- **notes:** Pass 2 local smoke PASS 2026-09-10 — gallery 6 samples (Pass1 + Morrow Roast cafe / Ledgerline SaaS / North Pier Sessions event); stronger 3D (CSS flip+parallax, three.js WebGL, CSS ticket stack); shop Kiln & Cotton + CSS tilt label fixed. Prefer STOP. No Lilly. NightDeck/Dungeon Dad untouched. ready=no until Pages push confirm.
 
 ## Browse
 
-Open locally (any static server or `file://`):
+Open locally:
+
+```bash
+cd /workspace/surface-lab && python3 -m http.server 8765
+# then open http://127.0.0.1:8765/
+```
 
 | Path | Role |
 |------|------|
-| `/workspace/surface-lab/index.html` | Gallery index (3 samples + design notes) |
+| `/workspace/surface-lab/index.html` | Gallery index (6 samples + design notes) |
 | `/workspace/surface-lab/samples/local-services/index.html` | Harbor Line Home Care — local services |
 | `/workspace/surface-lab/samples/creator/index.html` | Nova Rhee · Studio — creator / link-in-bio |
 | `/workspace/surface-lab/samples/shop/index.html` | Kiln & Cotton — small shop |
+| `/workspace/surface-lab/samples/cafe/index.html` | Morrow Roast — cafe / restaurant |
+| `/workspace/surface-lab/samples/saas/index.html` | Ledgerline — SaaS waitlist |
+| `/workspace/surface-lab/samples/event/index.html` | North Pier Sessions — event / meetup |
 
 Shared:
 
@@ -35,70 +42,73 @@ Shared:
 | `/workspace/surface-lab/shared/card-stack.css` | CSS 3D perspective review stack |
 | `/workspace/surface-lab/shared/tilt.js` | Pointer perspective tilt for product cards |
 
-Quick local serve:
-
-```bash
-cd /workspace/surface-lab && python3 -m http.server 8765
-# then open http://127.0.0.1:8765/
-```
+Per-sample assets: `cafe.css` / `cafe.js`, `saas.css` / `saas.js`, `event.css` / `event.js`, `shop.css`.
 
 ## Distinct visual systems
 
+### Pass 1 (kept)
+
 1. **Local services — Harbor Line Home Care**
    - Palette: deep navy `#0b1f3a`, warm sand `#f5efe6`, amber CTA `#e8912d`
-   - Type: Source Serif 4 (display) + DM Sans (UI)
+   - Type: Source Serif 4 + DM Sans
    - Pattern: trust strip, phone CTA, services grid, reviews, after-hours band
 
 2. **Creator — Nova Rhee**
    - Palette: ink violet `#12081c`, blush `#f0a6ca`, soft glow `#c4b5fd`
-   - Type: Syne (display) + IBM Plex Mono (meta)
+   - Type: Syne + IBM Plex Mono
    - Pattern: avatar, link-in-bio buttons, featured work tiles
 
 3. **Shop — Kiln & Cotton**
-   - Palette: cream `#f3ebe0`, terracotta `#c46b3a`, charcoal `#2a1a12`
-   - Type: Fraunces (display) + Outfit (UI)
+   - Palette: cream `#f3ebe0`, terracotta/espresso, charcoal `#2a1a12`
+   - Type: Palatino/serif display + system sans
    - Pattern: product hero, 3 product cards, contact (no cart/payments)
+   - **Nit fix:** live page brand now matches gallery/ARTIFACT (**Kiln & Cotton**, was mislabeled Pebble & Wick); technique label corrected to CSS perspective tilt (was false “WebGL”)
 
-## Light 3D techniques (AC: ≥2)
+### Pass 2 (new)
 
-| Sample | Technique | Implementation |
-|--------|-----------|----------------|
-| Local services | CSS perspective **card stack** | `shared/card-stack.css` — stacked review cards with `perspective` / `translateZ` / `rotateY`; fans on hover/focus |
-| Creator | **three.js** CDN hero orb | `three@0.160.0` ES module from unpkg — flat-shaded icosahedron + wireframe; low `powerPreference`, capped DPR, skips on `prefers-reduced-motion` |
-| Shop | CSS perspective **tilt cards** | `shared/tilt.js` + `data-tilt` on product cards — pointer-driven `rotateX/Y` |
+4. **Cafe — Morrow Roast**
+   - Palette: warm olive `#3f4a2e` / `#2a3220`, cream `#f4efe4`, clay `#c4a574`
+   - Type: Libre Baskerville + Nunito Sans
+   - Pattern: menu highlight, hours, reserve/contact CTA
 
-## Hard stops checklist
+5. **SaaS waitlist — Ledgerline**
+   - Palette: cool slate `#0f1724`, electric teal `#2dd4bf`
+   - Type: Space Grotesk + Inter
+   - Pattern: product hero, 3 feature cards, email waitlist (UI only)
 
-- [x] Gallery index loads and links to all 3 samples
-- [x] Each sample is distinct mobile-first landing (services / creator / shop)
-- [x] At least two light-3D treatments (all three samples include one)
-- [x] No NightDeck or Dungeon Dad files/URLs touched
-- [x] ARTIFACT.md lists paths + techniques + Phil review checklist
+6. **Event — North Pier Sessions**
+   - Palette: night indigo `#0b1026`, coral `#ff6b6b`
+   - Type: Bebas Neue + Manrope
+   - Pattern: date/venue, agenda strip, RSVP CTA (UI only)
 
-## Phil review checklist
+## 3D techniques
 
-- [ ] Visual systems feel distinct (not palette clones)
-- [ ] Phone CTAs / contact paths read clearly on mobile width
-- [ ] 3D is visible but not heavy on phone (reduced-motion respected)
-- [ ] Copy/brands stay fictional — OK to promote to team design-reference?
-- [ ] Prefer GitHub Pages under `dev-storm-clockers` after approval?
+| Sample | Technique | Strength | Implementation |
+|--------|-----------|----------|----------------|
+| Local services | CSS perspective **card stack** | Pass 1 light | `shared/card-stack.css` |
+| Creator | **three.js WebGL** orb | Pass 1 (real WebGL) | `three@0.160.0` CDN in sample |
+| Shop | CSS perspective **tilt** | Pass 1 light | `shared/tilt.js` + CSS hero (label fixed) |
+| Cafe | CSS **flip** menu cards + **parallax** layers | **Stronger** | `cafe.css` / `cafe.js` |
+| SaaS | **three.js WebGL** torus-knot mesh | **Stronger** | `saas.js` + CDN import map |
+| Event | CSS **3D ticket stack** + **flip** RSVP card | **Stronger** | `event.css` / `event.js` |
 
-## Optional: GitHub Pages (do not force)
+Stronger-3D hard stop: cafe + saas + event all qualify (≥2 required).
 
-If `gh` is authenticated with a studio PAT that can push to `dev-storm-clockers`:
+## Hard stops checklist (Pass 2)
 
-1. Create or choose a repo (e.g. `dev-storm-clockers/surface-lab`).
-2. Copy this tree (or subtree) to the repo root or `/docs`.
-3. Enable Pages: Settings → Pages → Deploy from branch `main` / `/` (or `/docs`).
-4. Or: `gh repo create dev-storm-clockers/surface-lab --public --source=. --remote=origin` from a cleaned copy, then push and enable Pages.
-
-If credentials are missing, keep browsing via local static server — Pass 1 success does not require deploy.
+- [x] Gallery lists Pass 1’s 3 + new 3 with working links
+- [x] Each new sample distinct mobile-first (cafe / SaaS-waitlist / event)
+- [x] ≥2 stronger-3D treatments visible and correctly labeled
+- [x] Pass 1 nits fixed (Kiln & Cotton name; WebGL vs CSS labels)
+- [x] NightDeck / Dungeon Dad untouched
+- [x] ARTIFACT.md updated (paths, techniques, pass 2)
+- [ ] ready_for_quality → yes (after smoke / Phil gate)
 
 ## Out of scope (held)
 
-Auth, payments, CMS, NightDeck, Dungeon Dad, public-tool overnight shortlist, stacked Codex jobs.
+Auth, payments, real email backends, CMS, NightDeck, Dungeon Dad, Lilly, endless taste polish.
 
 ## Build notes
 
-- Cleared parallel-agent stubs under `samples/services/`, unused `creator.css` / `creator-parallax.js`, empty `shop.css` so the tree matches AC paths only.
-- `gh` authenticated as `dev-storm-clockers` on this box; Pages deploy optional — see above.
+- Sole writer Pass 2 under `/workspace/surface-lab` only.
+- No git push from this pass unless Phil/CoS requests.

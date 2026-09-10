@@ -1,0 +1,131 @@
+/* Ledgerline — cool slate / electric teal, geometric sans */
+:root {
+  --slate: #0f1724;
+  --slate-mid: #1a2436;
+  --panel: #151e2e;
+  --border: #2a3850;
+  --text: #e8eef8;
+  --muted: #8b9bb3;
+  --teal: #2dd4bf;
+  --teal-deep: #0d9488;
+  --glow: #5eead4;
+  --display: "Space Grotesk", system-ui, sans-serif;
+  --sans: "Inter", system-ui, sans-serif;
+  --radius: 16px;
+}
+*, *::before, *::after { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: var(--sans);
+  background: var(--slate);
+  color: var(--text);
+  line-height: 1.5;
+  min-height: 100dvh;
+}
+a { color: inherit; text-decoration: none; }
+.wrap { width: min(1000px, 100% - 1.5rem); margin-inline: auto; }
+.top {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 1.1rem 0; gap: 1rem;
+}
+.logo {
+  font-family: var(--display); font-weight: 700; font-size: 1.15rem;
+  letter-spacing: -0.03em;
+}
+.logo::before {
+  content: "";
+  display: inline-block; width: 0.55rem; height: 0.55rem;
+  border-radius: 2px; background: var(--teal);
+  margin-right: 0.45rem; vertical-align: middle;
+  box-shadow: 0 0 12px var(--teal);
+}
+.nav-link {
+  font-size: 0.88rem; font-weight: 600; color: var(--teal);
+  border: 1px solid color-mix(in srgb, var(--teal) 40%, transparent);
+  padding: 0.45rem 0.85rem; border-radius: 999px;
+}
+.hero {
+  display: grid; gap: 1.5rem; align-items: center;
+  padding: 1rem 0 2rem;
+}
+@media (min-width: 800px) {
+  .hero { grid-template-columns: 1.05fr 0.95fr; min-height: 420px; }
+}
+.eyebrow {
+  margin: 0 0 0.5rem; font-size: 0.72rem; font-weight: 600;
+  letter-spacing: 0.14em; text-transform: uppercase; color: var(--teal);
+}
+.hero h1 {
+  margin: 0 0 0.75rem; font-family: var(--display);
+  font-size: clamp(1.85rem, 5vw, 2.75rem); line-height: 1.12;
+  letter-spacing: -0.03em; max-width: 14ch;
+}
+.lede { margin: 0 0 1.25rem; color: var(--muted); max-width: 36ch; font-size: 1.02rem; }
+.btn {
+  display: inline-flex; align-items: center; justify-content: center;
+  font-family: inherit; font-weight: 700; font-size: 0.95rem;
+  padding: 0.75rem 1.2rem; border-radius: 999px; border: none; cursor: pointer;
+  background: var(--teal); color: var(--slate);
+  box-shadow: 0 0 24px rgba(45, 212, 191, 0.25);
+}
+.tech-note {
+  margin: 0.9rem 0 0; font-size: 0.68rem; letter-spacing: 0.06em;
+  text-transform: uppercase; color: var(--muted);
+}
+.hero-visual {
+  position: relative;
+  aspect-ratio: 1; max-width: 420px; width: 100%; margin-inline: auto;
+  border-radius: 24px; overflow: hidden;
+  background:
+    radial-gradient(circle at 50% 40%, rgba(45,212,191,0.18), transparent 55%),
+    var(--panel);
+  border: 1px solid var(--border);
+}
+#mesh-canvas { display: block; width: 100%; height: 100%; }
+.features {
+  display: grid; gap: 0.85rem; margin-bottom: 2rem;
+}
+@media (min-width: 700px) { .features { grid-template-columns: repeat(3, 1fr); } }
+.feat {
+  background: var(--panel); border: 1px solid var(--border);
+  border-radius: var(--radius); padding: 1.15rem 1.05rem;
+}
+.icon {
+  font-size: 1.25rem; color: var(--teal); margin-bottom: 0.55rem;
+  font-family: var(--display);
+}
+.feat h2 {
+  margin: 0 0 0.4rem; font-family: var(--display);
+  font-size: 1.05rem; letter-spacing: -0.02em;
+}
+.feat p { margin: 0; color: var(--muted); font-size: 0.9rem; }
+.waitlist { margin-bottom: 2.5rem; }
+.wait-card {
+  background: linear-gradient(160deg, var(--slate-mid), var(--panel));
+  border: 1px solid color-mix(in srgb, var(--teal) 30%, var(--border));
+  border-radius: 20px; padding: 1.5rem 1.25rem;
+  box-shadow: 0 0 40px rgba(45, 212, 191, 0.08);
+}
+.wait-card h2 {
+  margin: 0 0 0.35rem; font-family: var(--display);
+  font-size: 1.35rem; letter-spacing: -0.02em;
+}
+.wait-card > p { margin: 0 0 1rem; color: var(--muted); font-size: 0.92rem; }
+.wait-card label {
+  display: block; font-size: 0.75rem; font-weight: 600;
+  letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted);
+  margin-bottom: 0.4rem;
+}
+.row { display: flex; flex-wrap: wrap; gap: 0.55rem; }
+.row input {
+  flex: 1 1 200px; font: inherit; padding: 0.75rem 0.9rem;
+  border-radius: 999px; border: 1px solid var(--border);
+  background: var(--slate); color: var(--text);
+}
+.msg { margin: 0.75rem 0 0; color: var(--glow); font-weight: 600; font-size: 0.9rem; }
+.foot {
+  display: flex; justify-content: space-between; gap: 1rem; flex-wrap: wrap;
+  padding: 0 0 2rem; font-size: 0.8rem; color: var(--muted);
+  border-top: 1px solid var(--border); padding-top: 1.25rem;
+}
+.foot a { color: var(--teal); font-weight: 600; }

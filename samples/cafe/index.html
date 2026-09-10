@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Morrow Roast — Cafe Sample</title>
+  <meta name="description" content="Neighborhood cafe: menu highlights, hours, and reserve CTA." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Nunito+Sans:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="cafe.css" />
+</head>
+<body>
+  <header class="site">
+    <div class="wrap bar">
+      <a class="logo" href="./">Morrow <em>Roast</em></a>
+      <nav>
+        <a href="#menu">Menu</a>
+        <a href="#hours">Hours</a>
+        <a class="cta" href="#reserve">Reserve</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero wrap" data-parallax>
+      <div class="hero-layers" aria-hidden="true">
+        <div class="layer l1"></div>
+        <div class="layer l2"></div>
+        <div class="layer l3"></div>
+      </div>
+      <div class="hero-copy">
+        <p class="eyebrow">East Quay · open daily</p>
+        <h1>Slow cups. Warm tables.</h1>
+        <p class="lede">Single-origin pour-overs, wood-fired pastries, and a quiet corner when you need one.</p>
+        <div class="hero-actions">
+          <a class="btn" href="#reserve">Reserve a table</a>
+          <a class="btn ghost" href="#menu">Today’s board</a>
+        </div>
+        <p class="tech-note">3D: layered parallax hero + CSS flip menu cards</p>
+      </div>
+    </section>
+
+    <section id="menu" class="menu wrap">
+      <div class="section-head">
+        <h2>Board highlights</h2>
+        <p>Tap a card to flip — ingredients &amp; notes on the back.</p>
+      </div>
+      <div class="flip-grid">
+        <button type="button" class="flip-card" aria-pressed="false">
+          <span class="flip-inner">
+            <span class="face front">
+              <span class="tag">Pour-over</span>
+              <strong>Morrow Blend</strong>
+              <span class="price">$5.50</span>
+              <span class="hint">Tap to flip</span>
+            </span>
+            <span class="face back">
+              <strong>Morrow Blend</strong>
+              <p>Ethiopia + Guatemala. Honey process, chocolate finish, soft berry lift.</p>
+            </span>
+          </span>
+        </button>
+        <button type="button" class="flip-card" aria-pressed="false">
+          <span class="flip-inner">
+            <span class="face front">
+              <span class="tag">Pastry</span>
+              <strong>Olive oil loaf</strong>
+              <span class="price">$4.25</span>
+              <span class="hint">Tap to flip</span>
+            </span>
+            <span class="face back">
+              <strong>Olive oil loaf</strong>
+              <p>Citrus zest, sea salt, baked mornings only. Pair with flat white.</p>
+            </span>
+          </span>
+        </button>
+        <button type="button" class="flip-card" aria-pressed="false">
+          <span class="flip-inner">
+            <span class="face front">
+              <span class="tag">Seasonal</span>
+              <strong>Fig &amp; thyme toast</strong>
+              <span class="price">$9.00</span>
+              <span class="hint">Tap to flip</span>
+            </span>
+            <span class="face back">
+              <strong>Fig &amp; thyme toast</strong>
+              <p>Sourdough, whipped ricotta, local fig jam, cracked pepper.</p>
+            </span>
+          </span>
+        </button>
+      </div>
+    </section>
+
+    <section id="hours" class="hours wrap">
+      <h2>Hours</h2>
+      <ul>
+        <li><span>Mon – Fri</span><span>7:00 – 5:00</span></li>
+        <li><span>Saturday</span><span>8:00 – 6:00</span></li>
+        <li><span>Sunday</span><span>8:00 – 3:00</span></li>
+      </ul>
+      <p class="addr">14 Pier Lane · fictional Harbor District</p>
+    </section>
+
+    <section id="reserve" class="reserve wrap">
+      <h2>Reserve / contact</h2>
+      <p>UI demo only — no bookings are sent.</p>
+      <form class="reserve-form" onsubmit="event.preventDefault(); this.querySelector('.form-ok').hidden=false;">
+        <label>Name<input type="text" name="name" placeholder="Your name" autocomplete="name" /></label>
+        <label>Party size
+          <select name="party">
+            <option>1</option><option selected>2</option><option>3</option><option>4+</option>
+          </select>
+        </label>
+        <label>Preferred time<input type="text" name="when" placeholder="Sat 10:30" /></label>
+        <label>Note<textarea name="note" rows="2" placeholder="Window seat if possible…"></textarea></label>
+        <button class="btn" type="submit">Request table</button>
+        <p class="form-ok" hidden>Thanks — this is a demo form only.</p>
+      </form>
+      <p class="contact-alt">Or call <a href="tel:+15550173400">(555) 017-3400</a> · <a href="mailto:hello@morrowroast.example">hello@morrowroast.example</a></p>
+    </section>
+  </main>
+
+  <footer class="foot wrap">
+    <p>Morrow Roast · fictional Surface Lab sample</p>
+    <a href="../../index.html">&larr; Gallery</a>
+  </footer>
+
+  <script src="cafe.js" defer></script>
+</body>
+</html>
