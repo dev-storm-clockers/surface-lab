@@ -1,0 +1,260 @@
+/* Fjord Form — Scandinavian furniture */
+:root {
+  --bg: #f3efe8;
+  --surface: #faf7f2;
+  --ink: #2c2a26;
+  --mute: #7a756c;
+  --line: #e2dbd0;
+  --wood: #d4c4a8;
+  --ash: #e8e0d2;
+  --birch: #f0e6d4;
+  --oak: #c9b896;
+  --accent: #5c6b5a;
+  --serif: "Instrument Serif", "Iowan Old Style", Georgia, serif;
+  --sans: "DM Sans", system-ui, sans-serif;
+}
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  background:
+    linear-gradient(180deg, #f7f3ec 0%, var(--bg) 40%, #ebe4d8 100%);
+  color: var(--ink);
+  font-family: var(--sans);
+  font-weight: 400;
+  line-height: 1.55;
+  min-height: 100dvh;
+}
+a { color: inherit; text-decoration: none; }
+.wrap {
+  width: min(880px, 100% - 2rem);
+  margin-inline: auto;
+}
+
+.top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1.5rem 0 1rem;
+}
+.logo {
+  font-family: var(--serif);
+  font-size: 1.45rem;
+  letter-spacing: -0.01em;
+}
+.nav {
+  display: flex;
+  gap: 1.1rem;
+  font-size: 0.8rem;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  color: var(--mute);
+}
+.nav a:hover { color: var(--ink); }
+
+.hero {
+  padding: 3rem 0 2.5rem;
+  max-width: 36rem;
+}
+.eyebrow {
+  margin: 0 0 1rem;
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+.hero h1 {
+  margin: 0 0 1.15rem;
+  font-family: var(--serif);
+  font-weight: 400;
+  font-size: clamp(2.2rem, 7vw, 3.4rem);
+  line-height: 1.08;
+  letter-spacing: -0.02em;
+}
+.lede {
+  margin: 0 0 1.5rem;
+  font-size: 1.05rem;
+  color: var(--mute);
+  max-width: 32rem;
+}
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.85rem;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  padding: 0.8rem 1.35rem;
+  background: var(--ink);
+  color: var(--bg);
+  border-radius: 2px;
+}
+.btn:hover { background: #1a1916; }
+.tech-note {
+  margin: 1.15rem 0 0;
+  font-size: 0.7rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--mute);
+}
+
+.collection { padding: 1rem 0 2.5rem; }
+.sec h2 {
+  margin: 0 0 0.35rem;
+  font-family: var(--serif);
+  font-weight: 400;
+  font-size: 1.85rem;
+}
+.sec p {
+  margin: 0 0 1.5rem;
+  color: var(--mute);
+  font-size: 0.95rem;
+}
+.products {
+  display: grid;
+  gap: 1rem;
+}
+@media (min-width: 700px) {
+  .products { grid-template-columns: repeat(3, 1fr); }
+}
+.product {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  padding: 1rem 1rem 1.2rem;
+  transform-style: preserve-3d;
+  transition: transform 0.15s ease-out, box-shadow 0.15s;
+  box-shadow: 0 1px 0 rgba(44, 42, 38, 0.04);
+  will-change: transform;
+}
+.product:hover {
+  box-shadow: 0 12px 28px rgba(44, 42, 38, 0.08);
+}
+.swatch {
+  aspect-ratio: 4 / 3;
+  border-radius: 2px;
+  margin-bottom: 1rem;
+  border: 1px solid color-mix(in srgb, var(--line) 80%, var(--ink));
+}
+.ash {
+  background:
+    linear-gradient(135deg, transparent 40%, rgba(255,255,255,0.35) 50%, transparent 60%),
+    linear-gradient(180deg, #efe8dc 0%, var(--ash) 100%);
+}
+.birch {
+  background:
+    linear-gradient(120deg, transparent 35%, rgba(255,255,255,0.4) 48%, transparent 62%),
+    linear-gradient(180deg, #f5ecdc 0%, var(--birch) 100%);
+}
+.oak {
+  background:
+    linear-gradient(145deg, transparent 30%, rgba(255,255,255,0.25) 50%, transparent 70%),
+    linear-gradient(180deg, #d8c9a8 0%, var(--oak) 100%);
+}
+.product h3 {
+  margin: 0 0 0.35rem;
+  font-family: var(--serif);
+  font-size: 1.25rem;
+  font-weight: 400;
+}
+.desc {
+  margin: 0 0 0.75rem;
+  font-size: 0.85rem;
+  color: var(--mute);
+}
+.price {
+  margin: 0;
+  font-size: 0.8rem;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  color: var(--accent);
+}
+
+.materials {
+  padding: 1rem 0 2.5rem;
+  border-top: 1px solid var(--line);
+}
+.mat-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 0;
+}
+.mat-list li {
+  display: grid;
+  gap: 0.2rem;
+  padding: 1.1rem 0;
+  border-bottom: 1px solid var(--line);
+}
+.mat-list strong {
+  font-weight: 500;
+  font-size: 0.95rem;
+}
+.mat-list span {
+  font-size: 0.88rem;
+  color: var(--mute);
+}
+
+.principle {
+  padding: 2.5rem 0;
+  border-block: 1px solid var(--line);
+  background: color-mix(in srgb, var(--surface) 70%, transparent);
+}
+.big {
+  margin: 0;
+  font-family: var(--serif);
+  font-size: clamp(1.35rem, 4vw, 1.85rem);
+  font-style: italic;
+  line-height: 1.35;
+  max-width: 28rem;
+  color: var(--ink);
+}
+
+.visit {
+  padding: 2.75rem 0 2.5rem;
+  text-align: center;
+}
+.visit h2 {
+  margin: 0 0 0.4rem;
+  font-family: var(--serif);
+  font-weight: 400;
+  font-size: 1.85rem;
+}
+.visit > p {
+  margin: 0 auto 1.25rem;
+  color: var(--mute);
+  max-width: 28rem;
+}
+.visit-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  justify-content: center;
+  align-items: center;
+}
+.ghost {
+  font-size: 0.9rem;
+  color: var(--mute);
+  border-bottom: 1px solid var(--line);
+  padding-bottom: 0.15rem;
+}
+.ghost:hover { color: var(--ink); border-color: var(--ink); }
+.addr {
+  margin: 1.25rem 0 0 !important;
+  font-size: 0.8rem !important;
+}
+
+.foot {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 0.75rem;
+  padding: 1.25rem 0 2rem;
+  border-top: 1px solid var(--line);
+  font-size: 0.78rem;
+  color: var(--mute);
+}
+.foot a { color: var(--ink); }

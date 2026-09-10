@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Fjord Form — Scandinavian Furniture</title>
+  <meta name="description" content="Fjord Form: pale wood furniture, quiet rooms, and product-led Scandinavian commerce." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="scandi.css" />
+</head>
+<body>
+  <header class="top wrap">
+    <a class="logo" href="./">Fjord Form</a>
+    <nav class="nav" aria-label="Primary">
+      <a href="#collection">Collection</a>
+      <a href="#materials">Materials</a>
+      <a href="#visit">Visit</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero wrap">
+      <p class="eyebrow">Furniture · quiet rooms</p>
+      <h1>Pale wood. Open air. Forms that stay out of the way.</h1>
+      <p class="lede">
+        A fictional Scandinavian maker of benches, shelves, and tables shaped for
+        northern light — product-led, unhurried, no checkout noise.
+      </p>
+      <a class="btn" href="#collection">View collection</a>
+      <p class="tech-note">Light CSS 3D — product card tilt (no WebGL)</p>
+    </section>
+
+    <section id="collection" class="collection wrap" aria-label="Products">
+      <header class="sec">
+        <h2>Collection</h2>
+        <p>Three pieces. Honest grain. Quiet luxury without the shout.</p>
+      </header>
+      <div class="products" data-tilt-root>
+        <article class="product" data-tilt>
+          <div class="swatch ash" aria-hidden="true"></div>
+          <h3>Ash Bench 140</h3>
+          <p class="desc">Low profile seating · white oil finish · solid ash</p>
+          <p class="price">From $680</p>
+        </article>
+        <article class="product" data-tilt>
+          <div class="swatch birch" aria-hidden="true"></div>
+          <h3>Birch Shelf System</h3>
+          <p class="desc">Modular uprights · linen backer · tool-free join</p>
+          <p class="price">From $420</p>
+        </article>
+        <article class="product" data-tilt>
+          <div class="swatch oak" aria-hidden="true"></div>
+          <h3>Oak Day Table</h3>
+          <p class="desc">Rounded apron · soft corners · matte lacquer</p>
+          <p class="price">From $1,140</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="materials" class="materials wrap">
+      <header class="sec">
+        <h2>Materials</h2>
+        <p>Wood first. Hardware second. Nothing glossy for its own sake.</p>
+      </header>
+      <ul class="mat-list">
+        <li>
+          <strong>Northern ash</strong>
+          <span>Light, springy grain — white oil that ages slowly</span>
+        </li>
+        <li>
+          <strong>FSC birch plywood</strong>
+          <span>Baltic core for shelves that stay true</span>
+        </li>
+        <li>
+          <strong>Brushed steel joinery</strong>
+          <span>Invisible when closed, honest when open</span>
+        </li>
+      </ul>
+    </section>
+
+    <section class="principle wrap">
+      <p class="big">
+        We design for rooms that already feel finished —
+        furniture should arrive like air, not furniture.
+      </p>
+    </section>
+
+    <section id="visit" class="visit wrap">
+      <h2>Visit the loft</h2>
+      <p>Demo showroom — no payments. Book a quiet viewing hour.</p>
+      <div class="visit-row">
+        <a class="btn" href="mailto:atelier@fjordform.example">atelier@fjordform.example</a>
+        <a class="ghost" href="tel:+1555018500">(555) 018-5000</a>
+      </div>
+      <p class="addr">Fictional Harbor Atelier · Thu–Sat by appointment</p>
+    </section>
+  </main>
+
+  <footer class="foot wrap">
+    <p>Fjord Form · Surface Lab Pass 4 · scandi-furniture sample</p>
+    <a href="../../">&larr; Gallery</a>
+  </footer>
+
+  <script>
+    (function () {
+      var cards = document.querySelectorAll("[data-tilt]");
+      if (!cards.length || window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+      cards.forEach(function (card) {
+        card.addEventListener("pointermove", function (e) {
+          var r = card.getBoundingClientRect();
+          var x = (e.clientX - r.left) / r.width - 0.5;
+          var y = (e.clientY - r.top) / r.height - 0.5;
+          card.style.transform =
+            "perspective(700px) rotateY(" + (x * 8) + "deg) rotateX(" + (-y * 6) + "deg) translateZ(0)";
+        });
+        card.addEventListener("pointerleave", function () {
+          card.style.transform = "perspective(700px) rotateY(0) rotateX(0)";
+        });
+      });
+    })();
+  </script>
+</body>
+</html>

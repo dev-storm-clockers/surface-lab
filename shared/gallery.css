@@ -198,3 +198,46 @@ img { max-width: 100%; display: block; }
   letter-spacing: 0.14em;
   text-shadow: 0 0 12px rgba(255, 43, 214, 0.7);
 }
+
+.pv-editorial {
+  background: linear-gradient(165deg, #f6f1e7 0%, #fffaf2 55%, #8b3a2a 100%);
+  color: #1c1915;
+  font-family: "Newsreader", Georgia, serif;
+  letter-spacing: -0.01em;
+}
+.pv-editorial span {
+  background: rgba(255, 250, 242, 0.92);
+  padding: 0.4rem 0.75rem;
+  border-left: 3px solid #8b3a2a;
+  font-weight: 700;
+}
+
+.pv-kids {
+  background:
+    radial-gradient(circle at 20% 30%, #ffb703 0%, transparent 40%),
+    radial-gradient(circle at 80% 70%, #4cc9f0 0%, transparent 42%),
+    linear-gradient(145deg, #fff8ef 0%, #ff6b6b 100%);
+  color: #2b2140;
+  font-family: "Fredoka", "Segoe UI Rounded", system-ui, sans-serif;
+}
+.pv-kids span {
+  background: #fff;
+  border: 2px solid #2b2140;
+  border-radius: 999px;
+  padding: 0.4rem 0.85rem;
+  box-shadow: 3px 3px 0 #7bdcb5;
+  font-weight: 600;
+}
+
+.pv-scandi {
+  background: linear-gradient(150deg, #f7f3ec 0%, #e8e0d2 45%, #c9b896 100%);
+  color: #2c2a26;
+  font-family: "Instrument Serif", Georgia, serif;
+  letter-spacing: -0.01em;
+}
+.pv-scandi span {
+  background: rgba(250, 247, 242, 0.88);
+  padding: 0.45rem 0.9rem;
+  border: 1px solid #e2dbd0;
+  font-weight: 400;
+}
