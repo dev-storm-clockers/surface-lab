@@ -9,6 +9,3 @@
 - **landing:** GitHub Pages preferred; Lilly only if Phil authorizes paid run via CoS→Harness
 - **hard_stop_passes:** 1 remote-cli job prefer; max 2
 - **phil_ok:** 2026-09-09 night yes — temporary company Surface Lab page design research
-
-## Phil agree
-- **2026-09-10:** Pass 1 saved as team design references (`design-refs/`).
