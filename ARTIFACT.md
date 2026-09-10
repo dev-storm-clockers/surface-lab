@@ -10,10 +10,10 @@
 - **root:** /workspace/surface-lab
 - **slug:** surface-lab
 - **owner_agent:** Build Head
-- **ready_for_quality:** no
+- **ready_for_quality:** yes
 - **pass:** 2
 - **live_url:** https://dev-storm-clockers.github.io/surface-lab/
-- **notes:** Pass 2 local smoke PASS 2026-09-10 — gallery 6 samples (Pass1 + Morrow Roast cafe / Ledgerline SaaS / North Pier Sessions event); stronger 3D (CSS flip+parallax, three.js WebGL, CSS ticket stack); shop Kiln & Cotton + CSS tilt label fixed. Prefer STOP. No Lilly. NightDeck/Dungeon Dad untouched. ready=no until Pages push confirm.
+- **notes:** Pass 2 local smoke PASS 2026-09-10 — gallery 6 samples (Pass1 + Morrow Roast cafe / Ledgerline SaaS / North Pier Sessions event); stronger 3D (CSS flip+parallax, three.js WebGL, CSS ticket stack); shop Kiln & Cotton + CSS tilt label fixed. Prefer STOP. No Lilly. NightDeck/Dungeon Dad untouched. Pages `9da8f7a` live HTTP 200 on all 6 samples; Build flipped ready=yes.
 
 ## Browse
 
