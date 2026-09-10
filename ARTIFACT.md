@@ -10,10 +10,10 @@
 - **root:** /workspace/surface-lab
 - **slug:** surface-lab
 - **owner_agent:** Build Head
-- **ready_for_quality:** yes
+- **ready_for_quality:** no
 - **pass:** 4
 - **live_url:** https://dev-storm-clockers.github.io/surface-lab/
-- **notes:** Pass 4 live smoke PASS on Pages @ 453e6ca — gallery 12 + Northbound Review / Little Harbor Day / Fjord Form. Prefer STOP. Harness live target https://surface-lab.secdevsolutions.help/ (static prefer). No Lilly from Build. NightDeck/Dungeon Dad untouched. ready_for_quality=yes.
+- **notes:** Astro twin Pages-path fix ready — local dual links relative; Astro base=/surface-lab/twins/editorial-astro/dist. ready=no until Pages live smoke. Static editorial intact. Prefer STOP. No Lilly. TLS parked Pages-only.
 
 ## Browse
 
@@ -36,7 +36,8 @@ cd /workspace/surface-lab && python3 -m http.server 8765
 | `/workspace/surface-lab/samples/brutalist/index.html` | GRIDLOCK STUDIO — brutalist portfolio | **brutalist** |
 | `/workspace/surface-lab/samples/spa/index.html` | Lumen Bathhouse — soft luxury spa | **soft-luxury** |
 | `/workspace/surface-lab/samples/neon/index.html` | VOLT ROOM — dark neon venue | **dark-neon** |
-| `/workspace/surface-lab/samples/editorial/index.html` | Northbound Review — editorial magazine | **editorial** |
+| `/workspace/surface-lab/samples/editorial/index.html` | Northbound Review — editorial magazine (Static) | **editorial** |
+| `/workspace/surface-lab/twins/editorial-astro/` | Northbound Review — editorial Astro twin | **editorial** |
 | `/workspace/surface-lab/samples/kids/index.html` | Little Harbor Day — kids daycare | **kids-bright** |
 | `/workspace/surface-lab/samples/scandi/index.html` | Fjord Form — Scandinavian furniture | **scandi-furniture** |
 
@@ -135,6 +136,16 @@ Shared:
 | Kids | none | labeled playful shapes |
 | Scandi | CSS product card tilt | labeled no WebGL |
 
+## Astro twin (editorial Pass 4)
+
+- **Project:** `/workspace/surface-lab/twins/editorial-astro/`
+- **Run locally:** cd /workspace/surface-lab/twins/editorial-astro && npm install && npm run dev → http://127.0.0.1:4321/
+- **Build output:** twins/editorial-astro/dist/ via npm run build; npm run preview → http://127.0.0.1:4321/
+- **Static twin:** samples/editorial/ via http://127.0.0.1:8765/samples/editorial/
+- **Gallery:** editorial card links Static and Astro
+- **Differs from static:** Astro/Vite toolchain, layout + global CSS import, OG meta tags added, footer labels twin; copy and visual intent match. No content collections yet. See twins/editorial-astro/TWIN-DIFF.md.
+- **ready_for_quality:** no until Build smoke of this twin pass.
+
 ## Hard stops checklist (Pass 4)
 
 - [x] Gallery lists prior 9 + 3 new with working links + style tags (editorial / kids-bright / scandi-furniture)
@@ -142,7 +153,7 @@ Shared:
 - [x] Visual systems distinct (palette + type + layout) — not recolored clones
 - [x] NightDeck / Dungeon Dad untouched
 - [x] ARTIFACT.md updated (paths, style tags, pass 4)
-- [x] ready_for_quality → yes (flipped after live smoke PASS @ 453e6ca)
+- [ ] ready_for_quality → no until Astro twin Build smoke
 
 ## Out of scope (held)
 
