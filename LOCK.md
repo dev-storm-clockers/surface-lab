@@ -21,3 +21,7 @@
 - 3 new landings: brutalist portfolio, soft luxury spa, dark neon venue — max style contrast
 - Pass 2 → design-refs; monetization later (don’t block)
 - Prefer one pass then STOP; Pages-first
+
+## Pass 4 (Phil 2026-09-10)
+- 3 new: editorial magazine, kids-bright daycare, Scandinavian furniture
+- Keep prior gallery; Pass 3→design-refs when Build can; prefer one pass STOP
