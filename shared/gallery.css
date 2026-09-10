@@ -154,3 +154,47 @@ img { max-width: 100%; display: block; }
   background: linear-gradient(160deg, #0b1026 0%, #1a2148 55%, #ff6b6b 100%);
   color: #e8ecff;
 }
+
+.pv-brutalist {
+  background: repeating-linear-gradient(
+      90deg,
+      #f4f1ea 0,
+      #f4f1ea 24%,
+      #0a0a0a 24%,
+      #0a0a0a 26%
+    ),
+    linear-gradient(180deg, #f4f1ea 0%, #e8e2d6 100%);
+  color: #0a0a0a;
+  font-family: "Archivo Black", "Arial Black", Impact, sans-serif;
+  letter-spacing: 0.06em;
+}
+.pv-brutalist span {
+  border: 2px solid #0a0a0a;
+  padding: 0.4rem 0.65rem;
+  background: #f4f1ea;
+  box-shadow: 4px 4px 0 #e10600;
+}
+
+.pv-spa {
+  background: linear-gradient(160deg, #f7f3ee 0%, #e8d5cc 45%, #b8c4b0 100%);
+  color: #3a342e;
+  font-family: "Cormorant Garamond", Palatino, serif;
+  letter-spacing: 0.04em;
+}
+.pv-spa span {
+  background: rgba(255, 253, 249, 0.72);
+  padding: 0.45rem 0.85rem;
+  border-radius: 999px;
+  font-weight: 500;
+}
+
+.pv-neon {
+  background:
+    radial-gradient(circle at 30% 40%, rgba(255, 43, 214, 0.45), transparent 45%),
+    radial-gradient(circle at 75% 60%, rgba(46, 240, 255, 0.35), transparent 40%),
+    linear-gradient(160deg, #050508 0%, #12121f 100%);
+  color: #eef2ff;
+  font-family: "Orbitron", "Segoe UI", sans-serif;
+  letter-spacing: 0.14em;
+  text-shadow: 0 0 12px rgba(255, 43, 214, 0.7);
+}

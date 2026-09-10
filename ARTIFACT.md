@@ -1,7 +1,7 @@
-# Surface Lab — Pass 2 ARTIFACT
+# Surface Lab — Pass 3 ARTIFACT
 
 **Company:** Surface Lab (temporary design-research label)  
-**Pass:** 2 — expand gallery + stronger 3D + Pass 1 nit fixes  
+**Pass:** 3 — distinct site styles (brutalist / soft-luxury / dark-neon)  
 **Built:** 2026-09-10 (UTC) / 2026-09-10 morning AT  
 **Scope:** Local static gallery only. No NightDeck / Dungeon Dad changes. No Lilly.
 
@@ -10,10 +10,10 @@
 - **root:** /workspace/surface-lab
 - **slug:** surface-lab
 - **owner_agent:** Build Head
-- **ready_for_quality:** yes
-- **pass:** 2
+- **ready_for_quality:** no
+- **pass:** 3
 - **live_url:** https://dev-storm-clockers.github.io/surface-lab/
-- **notes:** Pass 2 local smoke PASS 2026-09-10 — gallery 6 samples (Pass1 + Morrow Roast cafe / Ledgerline SaaS / North Pier Sessions event); stronger 3D (CSS flip+parallax, three.js WebGL, CSS ticket stack); shop Kiln & Cotton + CSS tilt label fixed. Prefer STOP. No Lilly. NightDeck/Dungeon Dad untouched. Pages `9da8f7a` live HTTP 200 on all 6 samples; Build flipped ready=yes.
+- **notes:** Pass 3 local smoke PASS 2026-09-10 — gallery 9 + style tags; GRIDLOCK / Lumen / VOLT distinct. Pages push pending; ready stays no until live re-smoke. Prefer STOP. No Lilly. NightDeck/Dungeon Dad untouched.
 
 ## Browse
 
@@ -24,25 +24,26 @@ cd /workspace/surface-lab && python3 -m http.server 8765
 # then open http://127.0.0.1:8765/
 ```
 
-| Path | Role |
-|------|------|
-| `/workspace/surface-lab/index.html` | Gallery index (6 samples + design notes) |
-| `/workspace/surface-lab/samples/local-services/index.html` | Harbor Line Home Care — local services |
-| `/workspace/surface-lab/samples/creator/index.html` | Nova Rhee · Studio — creator / link-in-bio |
-| `/workspace/surface-lab/samples/shop/index.html` | Kiln & Cotton — small shop |
-| `/workspace/surface-lab/samples/cafe/index.html` | Morrow Roast — cafe / restaurant |
-| `/workspace/surface-lab/samples/saas/index.html` | Ledgerline — SaaS waitlist |
-| `/workspace/surface-lab/samples/event/index.html` | North Pier Sessions — event / meetup |
+| Path | Role | Style tag |
+|------|------|-----------|
+| `/workspace/surface-lab/index.html` | Gallery index (9 samples) | — |
+| `/workspace/surface-lab/samples/local-services/index.html` | Harbor Line Home Care — local services | Pass 1 |
+| `/workspace/surface-lab/samples/creator/index.html` | Nova Rhee · Studio — creator / link-in-bio | Pass 1 |
+| `/workspace/surface-lab/samples/shop/index.html` | Kiln & Cotton — small shop | Pass 1 |
+| `/workspace/surface-lab/samples/cafe/index.html` | Morrow Roast — cafe / restaurant | Pass 2 |
+| `/workspace/surface-lab/samples/saas/index.html` | Ledgerline — SaaS waitlist | Pass 2 |
+| `/workspace/surface-lab/samples/event/index.html` | North Pier Sessions — event / meetup | Pass 2 |
+| `/workspace/surface-lab/samples/brutalist/index.html` | GRIDLOCK STUDIO — brutalist portfolio | **brutalist** |
+| `/workspace/surface-lab/samples/spa/index.html` | Lumen Bathhouse — soft luxury spa | **soft-luxury** |
+| `/workspace/surface-lab/samples/neon/index.html` | VOLT ROOM — dark neon venue | **dark-neon** |
 
 Shared:
 
 | Path | Role |
 |------|------|
-| `/workspace/surface-lab/shared/gallery.css` | Gallery shell styles |
+| `/workspace/surface-lab/shared/gallery.css` | Gallery shell + Pass 3 preview tiles |
 | `/workspace/surface-lab/shared/card-stack.css` | CSS 3D perspective review stack |
 | `/workspace/surface-lab/shared/tilt.js` | Pointer perspective tilt for product cards |
-
-Per-sample assets: `cafe.css` / `cafe.js`, `saas.css` / `saas.js`, `event.css` / `event.js`, `shop.css`.
 
 ## Distinct visual systems
 
@@ -51,64 +52,78 @@ Per-sample assets: `cafe.css` / `cafe.js`, `saas.css` / `saas.js`, `event.css` /
 1. **Local services — Harbor Line Home Care**
    - Palette: deep navy `#0b1f3a`, warm sand `#f5efe6`, amber CTA `#e8912d`
    - Type: Source Serif 4 + DM Sans
-   - Pattern: trust strip, phone CTA, services grid, reviews, after-hours band
 
 2. **Creator — Nova Rhee**
    - Palette: ink violet `#12081c`, blush `#f0a6ca`, soft glow `#c4b5fd`
    - Type: Syne + IBM Plex Mono
-   - Pattern: avatar, link-in-bio buttons, featured work tiles
 
 3. **Shop — Kiln & Cotton**
    - Palette: cream `#f3ebe0`, terracotta/espresso, charcoal `#2a1a12`
    - Type: Palatino/serif display + system sans
-   - Pattern: product hero, 3 product cards, contact (no cart/payments)
-   - **Nit fix:** live page brand now matches gallery/ARTIFACT (**Kiln & Cotton**, was mislabeled Pebble & Wick); technique label corrected to CSS perspective tilt (was false “WebGL”)
 
-### Pass 2 (new)
+### Pass 2 (kept)
 
 4. **Cafe — Morrow Roast**
    - Palette: warm olive `#3f4a2e` / `#2a3220`, cream `#f4efe4`, clay `#c4a574`
    - Type: Libre Baskerville + Nunito Sans
-   - Pattern: menu highlight, hours, reserve/contact CTA
 
 5. **SaaS waitlist — Ledgerline**
    - Palette: cool slate `#0f1724`, electric teal `#2dd4bf`
    - Type: Space Grotesk + Inter
-   - Pattern: product hero, 3 feature cards, email waitlist (UI only)
 
 6. **Event — North Pier Sessions**
    - Palette: night indigo `#0b1026`, coral `#ff6b6b`
    - Type: Bebas Neue + Manrope
-   - Pattern: date/venue, agenda strip, RSVP CTA (UI only)
 
-## 3D techniques
+### Pass 3 (new)
 
-| Sample | Technique | Strength | Implementation |
-|--------|-----------|----------|----------------|
-| Local services | CSS perspective **card stack** | Pass 1 light | `shared/card-stack.css` |
-| Creator | **three.js WebGL** orb | Pass 1 (real WebGL) | `three@0.160.0` CDN in sample |
-| Shop | CSS perspective **tilt** | Pass 1 light | `shared/tilt.js` + CSS hero (label fixed) |
-| Cafe | CSS **flip** menu cards + **parallax** layers | **Stronger** | `cafe.css` / `cafe.js` |
-| SaaS | **three.js WebGL** torus-knot mesh | **Stronger** | `saas.js` + CDN import map |
-| Event | CSS **3D ticket stack** + **flip** RSVP card | **Stronger** | `event.css` / `event.js` |
+7. **Brutalist portfolio — GRIDLOCK STUDIO** · style tag: **brutalist**
+   - Palette: paper `#f4f1ea`, pure ink `#0a0a0a`, signal red `#e10600`
+   - Type: Archivo Black + IBM Plex Mono
+   - Layout: thick rules, hard cell grid, sparse chrome, uppercase display
+   - 3D: none (flat ink — labeled)
 
-Stronger-3D hard stop: cafe + saas + event all qualify (≥2 required).
+8. **Soft luxury spa — Lumen Bathhouse** · style tag: **soft-luxury**
+   - Palette: ivory `#f7f3ee`, sage `#b8c4b0`, blush `#e8d5cc`, stone `#d4cbc0`, accent `#6f7d68`
+   - Type: Cormorant Garamond + Outfit
+   - Layout: centered airy hero, generous whitespace, soft pill CTAs, ritual cards
+   - 3D: none (soft light / whitespace — labeled)
 
-## Hard stops checklist (Pass 2)
+9. **Dark neon venue — VOLT ROOM** · style tag: **dark-neon**
+   - Palette: near-black `#050508`, magenta `#ff2bd6`, cyan `#2ef0ff`, lime `#b8ff3c`
+   - Type: Orbitron + Rajdhani
+   - Layout: dark field, neon CTAs, lineup list, ticket tiers
+   - 3D: CSS neon glow + perspective ticket card (explicitly **no WebGL**)
 
-- [x] Gallery lists Pass 1’s 3 + new 3 with working links
-- [x] Each new sample distinct mobile-first (cafe / SaaS-waitlist / event)
-- [x] ≥2 stronger-3D treatments visible and correctly labeled
-- [x] Pass 1 nits fixed (Kiln & Cotton name; WebGL vs CSS labels)
+## 3D techniques (all passes)
+
+| Sample | Technique | Label accuracy |
+|--------|-----------|----------------|
+| Local services | CSS perspective card stack | OK |
+| Creator | three.js WebGL orb | OK |
+| Shop | CSS perspective tilt | OK |
+| Cafe | CSS flip + parallax | OK |
+| SaaS | three.js WebGL mesh | OK |
+| Event | CSS ticket stack + flip | OK |
+| Brutalist | none | labeled flat ink |
+| Spa | none | labeled soft light |
+| Neon | CSS glow + layered ticket | labeled no WebGL |
+
+## Hard stops checklist (Pass 3)
+
+- [x] Gallery lists prior 6 + 3 new with working links + style tags
+- [x] Each new landing matches assigned style (brutalist / soft-luxury / dark-neon), mobile-first
+- [x] Visual systems distinct (palette + type + layout) — not recolored clones
 - [x] NightDeck / Dungeon Dad untouched
-- [x] ARTIFACT.md updated (paths, techniques, pass 2)
-- [ ] ready_for_quality → yes (after smoke / Phil gate)
+- [x] ARTIFACT.md updated (paths, style tags, pass 3)
+- [ ] ready_for_quality → yes (held at **no** until Quality/Phil gate)
 
 ## Out of scope (held)
 
-Auth, payments, real email backends, CMS, NightDeck, Dungeon Dad, Lilly, endless taste polish.
+Auth, payments, real bookings, CMS, monetization checkout, NightDeck, Dungeon Dad, Lilly, endless taste polish.
 
 ## Build notes
 
-- Sole writer Pass 2 under `/workspace/surface-lab` only.
+- Sole writer Pass 3 under `/workspace/surface-lab` only.
 - No git push from this pass unless Phil/CoS requests.
+- Design-refs refresh optional / non-blocking — skipped for this pass Done.

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>VOLT ROOM — Dark Neon Venue</title>
+  <meta name="description" content="VOLT ROOM: underground nightclub tickets, lineup drops, and neon nights." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;800&family=Rajdhani:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="neon.css" />
+</head>
+<body>
+  <div class="scan" aria-hidden="true"></div>
+
+  <header class="top wrap">
+    <a class="logo" href="./">VOLT<span>ROOM</span></a>
+    <a class="pill" href="#tickets">GET TIX</a>
+  </header>
+
+  <main>
+    <section class="hero wrap">
+      <p class="eyebrow">FRI SAT · DOORS 22:00</p>
+      <h1>CHARGE<br />THE FLOOR</h1>
+      <p class="lede">
+        Fictional basement venue. Bass that hits the ribs, neon that paints the walls,
+        and guest lists that move fast.
+      </p>
+      <div class="hero-actions">
+        <a class="btn neon" href="#tickets">Buy tickets</a>
+        <a class="btn ghost" href="#lineup">See lineup</a>
+      </div>
+      <p class="tech-note">3D: CSS neon glow + layered ticket card (no WebGL)</p>
+    </section>
+
+    <section class="ticket-stage wrap" aria-label="Neon ticket preview">
+      <div class="ticket-card">
+        <div class="ticket-glow" aria-hidden="true"></div>
+        <div class="ticket-face">
+          <span class="t-brand">VOLT ROOM</span>
+          <span class="t-show">SAT · MAIN ROOM</span>
+          <span class="t-title">VOLTAGE / NIGHT</span>
+          <span class="t-meta">Admit one · 22:00–04:00</span>
+          <span class="t-code">VR-0920</span>
+        </div>
+      </div>
+    </section>
+
+    <section id="lineup" class="lineup wrap">
+      <header class="sec">
+        <h2>LINEUP</h2>
+        <p>This weekend’s fictional drop</p>
+      </header>
+      <ul class="acts">
+        <li>
+          <span class="slot">22:30</span>
+          <div>
+            <strong>KIRA VOLT</strong>
+            <span>Main room · techno</span>
+          </div>
+        </li>
+        <li>
+          <span class="slot">00:15</span>
+          <div>
+            <strong>STATIC TWINS</strong>
+            <span>B2B · warehouse edits</span>
+          </div>
+        </li>
+        <li>
+          <span class="slot">02:00</span>
+          <div>
+            <strong>NULL SIGNAL</strong>
+            <span>Closer · hard groove</span>
+          </div>
+        </li>
+      </ul>
+    </section>
+
+    <section class="info wrap">
+      <div class="info-card">
+        <h3>VENUE</h3>
+        <p>Sublevel 2 · fictional Circuit District<br />18+ · no flash · coat check open</p>
+      </div>
+      <div class="info-card">
+        <h3>RULES</h3>
+        <p>Respect the floor. Phone lights down.<br />Tickets are demo-only — no checkout.</p>
+      </div>
+    </section>
+
+    <section id="tickets" class="tickets wrap">
+      <h2>TICKETS</h2>
+      <p class="sub">UI only — tap to pretend you secured a wristband.</p>
+      <div class="tix-grid">
+        <article class="tix">
+          <span class="tier">EARLY</span>
+          <p class="price">$18</p>
+          <p class="desc">Before midnight · main room access</p>
+          <a class="btn slim" href="mailto:door@voltroom.example">Hold early</a>
+        </article>
+        <article class="tix hot">
+          <span class="tier">FULL NIGHT</span>
+          <p class="price">$28</p>
+          <p class="desc">All rooms · guestlist priority</p>
+          <a class="btn slim neon" href="mailto:door@voltroom.example">Hold full</a>
+        </article>
+        <article class="tix">
+          <span class="tier">VIP RAIL</span>
+          <p class="price">$55</p>
+          <p class="desc">Booth rail · two drinks fictional</p>
+          <a class="btn slim" href="mailto:door@voltroom.example">Hold VIP</a>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="foot wrap">
+    <p>VOLT ROOM · Surface Lab Pass 3 · dark-neon sample</p>
+    <a href="../../">&larr; Gallery</a>
+  </footer>
+</body>
+</html>
