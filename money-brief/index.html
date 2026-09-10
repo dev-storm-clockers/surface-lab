@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Surface Lab — Money Brief · Packs</title>
-  <meta name="description" content="Surface Lab packs: Editorial Twin, Token Pack, Diff Kit — CAD price bands. Marketing brief only; checkout coming soon." />
+  <meta name="description" content="Surface Lab packs: Editorial Twin, Token Pack, Diff Kit — CAD price bands. Buy on Gumroad (config-driven)." />
   <link rel="stylesheet" href="money-brief.css" />
 </head>
 <body>
@@ -41,7 +41,7 @@
           Northbound Review static + Astro twin + migration/SEO notes.
           Astro included — no separate add-on. Band / starting range.
         </p>
-        <span class="mb-cta primary" role="text" aria-disabled="true">Coming soon</span>
+        <a class="mb-cta primary" data-sku="editorialTwin" href="#" target="_blank" rel="noopener">Buy on Gumroad</a>
       </article>
 
       <article class="mb-card">
@@ -52,7 +52,7 @@
           Shared design tokens + restyle guide from design-refs.
           Band / starting range.
         </p>
-        <span class="mb-cta" role="text" aria-disabled="true">Notify me</span>
+        <a class="mb-cta" data-sku="tokenPack" href="#" target="_blank" rel="noopener">Buy on Gumroad</a>
       </article>
 
       <article class="mb-card">
@@ -63,20 +63,24 @@
           Twin Diff Kit alone: static↔Astro checklist, must-holds, parity notes
           (no full twin zip). Education / upsell. Band / starting range.
         </p>
-        <span class="mb-cta" role="text" aria-disabled="true">Coming soon</span>
+        <a class="mb-cta" data-sku="diffKit" href="#" target="_blank" rel="noopener">Buy on Gumroad</a>
       </article>
     </section>
 
     <section class="mb-optional" aria-label="Optional bundle and commercial">
       <h3>Optional</h3>
       <ul>
-        <li><strong>Pack Pro</strong> — Twin + Token + Diff Kit · <strong>$149–179 CAD</strong> (bundle band)</li>
-        <li><strong>Commercial</strong> — Multi-client license on that SKU/bundle · <strong>2×</strong> (one-pager license)</li>
+        <li>
+          <strong>Pack Pro</strong> — Twin + Token + Diff Kit · <strong>$149–179 CAD</strong> (bundle band)
+          <br />
+          <a class="mb-cta" data-sku="packPro" href="#" target="_blank" rel="noopener">Buy on Gumroad</a>
+        </li>
+        <li><strong>Commercial</strong> — Multi-client license on that SKU/bundle · <strong>2×</strong> (one-pager license; note-only until a URL is added in gumroad.json)</li>
       </ul>
     </section>
 
     <p class="mb-note">
-      Buy CTAs are stubs — not wired to Stripe, Gumroad, or checkout. Prices are CAD bands.
+      Buy opens Gumroad (config-driven via <code>gumroad.json</code>; stubs until Phil pastes real product URLs). Prices are CAD bands. No Stripe.
     </p>
 
     <section class="mb-proof" aria-label="Proof links">
@@ -93,5 +97,6 @@
       Surface Lab · Money Brief · not NightDeck / Dungeon Dad · see ARTIFACT.md
     </footer>
   </div>
+  <script src="gumroad.js" defer></script>
 </body>
 </html>

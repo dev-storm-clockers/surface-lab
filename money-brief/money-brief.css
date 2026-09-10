@@ -151,14 +151,30 @@ a:hover { text-decoration: underline; }
   font: inherit;
   font-size: 0.85rem;
   font-weight: 600;
-  cursor: default;
+  cursor: pointer;
   text-decoration: none;
   width: 100%;
 }
-.mb-cta:hover { text-decoration: none; }
+a.mb-cta:hover {
+  text-decoration: none;
+  border-color: color-mix(in srgb, var(--accent2) 45%, var(--border));
+  color: var(--text);
+}
 .mb-cta.primary {
   border-color: color-mix(in srgb, var(--accent) 50%, var(--border));
   color: var(--accent);
+  background: color-mix(in srgb, var(--accent) 8%, transparent);
+}
+a.mb-cta.primary:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+  background: color-mix(in srgb, var(--accent) 14%, transparent);
+}
+.mb-optional .mb-cta {
+  width: auto;
+  margin-top: 0.65rem;
+  padding: 0.4rem 0.85rem;
+  font-size: 0.8rem;
 }
 
 .mb-optional {

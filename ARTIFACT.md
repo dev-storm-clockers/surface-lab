@@ -10,10 +10,10 @@
 - **root:** /workspace/surface-lab
 - **slug:** surface-lab
 - **owner_agent:** Build Head
-- **ready_for_quality:** yes
-- **pass:** 4
-- **live_url:** https://dev-storm-clockers.github.io/surface-lab/
-- **notes:** Money Brief live smoke PASS @ ec5fefc — /money-brief/ SKUs + stub CTAs; twin still @ 4577a59. Prefer STOP. TLS Pages-only. No Lilly. ND/DD untouched. ready_for_quality=yes.
+- **ready_for_quality:** no
+- **pass:** Money Brief Gumroad CTAs (local)
+- **live_url:** https://dev-storm-clockers.github.io/surface-lab/money-brief/
+- **notes:** Gumroad Buy CTAs wired locally via money-brief/gumroad.json + gumroad.js. Stub Gumroad-shaped URLs until Phil pastes real product links. **ready_for_quality: no** for this Gumroad pass (local smoke only; no Pages push this turn). ND/DD/Meridian/Lilly untouched. No Stripe.
 
 ## Browse
 
@@ -161,12 +161,16 @@ Shared:
 - **path:** `money-brief/` → `/workspace/surface-lab/money-brief/index.html`
 - **live_url (Pages):** https://dev-storm-clockers.github.io/surface-lab/money-brief/
 - **local:** http://127.0.0.1:8765/money-brief/
-- **ready_for_quality:** yes (live smoke PASS @ ec5fefc)
-- **buy CTA:** stub / not wired (Coming soon · Notify — no Stripe/Gumroad)
-- **SKUs shown (CAD bands):** Editorial Twin $79–99 · Token Pack $39–59 · Diff Kit $29–49 · optional Pack Pro $149–179 · Commercial 2×
+- **ready_for_quality:** no (Gumroad CTA pass — local only this turn; flip after Pages smoke)
+- **buy CTA:** Buy on Gumroad — config-driven (`money-brief/gumroad.json` + `money-brief/gumroad.js`); opens new tab
+- **gumroad config:** `money-brief/gumroad.json`
+  - Keys: `editorialTwin`, `tokenPack`, `diffKit`, `packPro` (optional Buy), `commercial` (null = note-only)
+  - **How Phil updates URLs:** edit `money-brief/gumroad.json` only — paste real Gumroad product URLs; no HTML rebuild. `_todo` field in JSON reminds.
+  - **Stub note:** current values are Gumroad-shaped placeholders (`https://philasplin.gumroad.com/l/…`). Replace with real product links when products exist. Missing/null → href `#`.
+- **SKUs shown (CAD bands locked):** Editorial Twin $79–99 · Token Pack $39–59 · Diff Kit $29–49 · optional Pack Pro $149–179 · Commercial 2× (note-only)
 - **gallery link:** header “Money Brief / Packs” + footer link
 - **proof links:** static twin `samples/editorial/`, Astro `twins/editorial-astro/dist/`, gallery `/`, design-refs/
-- **notes:** Marketing page only per AC-money-brief-page.md / MONEY-BRIEF-template-pack.md. No checkout · no zip fulfillment · ND/DD untouched · no Lilly.
+- **notes:** Gumroad CTAs per AC-money-brief-gumroad.md. No Stripe · no zip fulfillment · ND/DD/Meridian untouched · no Lilly.
 
 ## Out of scope (held)
 
