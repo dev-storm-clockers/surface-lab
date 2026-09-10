@@ -25,3 +25,6 @@
 ## Pass 4 (Phil 2026-09-10)
 - 3 new: editorial magazine, kids-bright daycare, Scandinavian furniture
 - Keep prior gallery; Pass 3→design-refs when Build can; prefer one pass STOP
+
+## Astro twin (post Pass 4)
+- Twin editorial (Northbound Review) static to Astro — see AC-astro-twin.md
