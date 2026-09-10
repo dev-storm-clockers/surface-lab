@@ -13,7 +13,7 @@
 - **ready_for_quality:** yes
 - **pass:** 4
 - **live_url:** https://dev-storm-clockers.github.io/surface-lab/
-- **notes:** Astro twin live smoke PASS @ 4577a59. Money Brief page at money-brief/ (CTA stub / not wired; ready_for_quality: no). Gallery links Money Brief / Packs. TLS Pages-only; no Lilly; ND/DD untouched.
+- **notes:** Money Brief live smoke PASS @ ec5fefc — /money-brief/ SKUs + stub CTAs; twin still @ 4577a59. Prefer STOP. TLS Pages-only. No Lilly. ND/DD untouched. ready_for_quality=yes.
 
 ## Browse
 
@@ -161,7 +161,7 @@ Shared:
 - **path:** `money-brief/` → `/workspace/surface-lab/money-brief/index.html`
 - **live_url (Pages):** https://dev-storm-clockers.github.io/surface-lab/money-brief/
 - **local:** http://127.0.0.1:8765/money-brief/
-- **ready_for_quality:** no
+- **ready_for_quality:** yes (live smoke PASS @ ec5fefc)
 - **buy CTA:** stub / not wired (Coming soon · Notify — no Stripe/Gumroad)
 - **SKUs shown (CAD bands):** Editorial Twin $79–99 · Token Pack $39–59 · Diff Kit $29–49 · optional Pack Pro $149–179 · Commercial 2×
 - **gallery link:** header “Money Brief / Packs” + footer link
