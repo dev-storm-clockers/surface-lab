@@ -10,10 +10,10 @@
 - **root:** /workspace/surface-lab
 - **slug:** surface-lab
 - **owner_agent:** Build Head
-- **ready_for_quality:** no
+- **ready_for_quality:** yes
 - **pass:** 4
 - **live_url:** https://dev-storm-clockers.github.io/surface-lab/
-- **notes:** Pass 4 local smoke PASS (HTTP) — gallery 12 + Northbound Review / Little Harbor Day / Fjord Form. Pages push pending; ready stays no until live re-smoke. Prefer STOP. Harness live target https://surface-lab.secdevsolutions.help/. No Lilly from Build. NightDeck/Dungeon Dad untouched.
+- **notes:** Pass 4 live smoke PASS on Pages @ 453e6ca — gallery 12 + Northbound Review / Little Harbor Day / Fjord Form. Prefer STOP. Harness live target https://surface-lab.secdevsolutions.help/ (static prefer). No Lilly from Build. NightDeck/Dungeon Dad untouched. ready_for_quality=yes.
 
 ## Browse
 
@@ -142,7 +142,7 @@ Shared:
 - [x] Visual systems distinct (palette + type + layout) — not recolored clones
 - [x] NightDeck / Dungeon Dad untouched
 - [x] ARTIFACT.md updated (paths, style tags, pass 4)
-- [ ] ready_for_quality remains **no** until Verifier/Build smoke
+- [x] ready_for_quality → yes (flipped after live smoke PASS @ 453e6ca)
 
 ## Out of scope (held)
 
