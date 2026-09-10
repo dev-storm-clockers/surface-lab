@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Harbor Line Home Care — Local Services Sample</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,500;8..60,700&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../../shared/card-stack.css" />
+  <style>
+    :root {
+      --navy: #0b1f3a;
+      --navy-mid: #143356;
+      --sand: #f5efe6;
+      --sand-deep: #e8dcc8;
+      --amber: #e8912d;
+      --amber-dark: #c45c26;
+      --ink: #1a2433;
+      --muted: #5a6a7e;
+      --white: #fff;
+      --radius: 12px;
+      --font-sans: "DM Sans", system-ui, sans-serif;
+      --font-serif: "Source Serif 4", Georgia, serif;
+    }
+    *, *::before, *::after { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: var(--font-sans);
+      background: var(--sand);
+      color: var(--ink);
+      line-height: 1.5;
+    }
+    a { color: inherit; }
+    .wrap { width: min(960px, 100% - 1.5rem); margin-inline: auto; }
+    .topbar {
+      background: var(--navy);
+      color: var(--sand);
+      font-size: 0.8rem;
+      padding: 0.45rem 0;
+      text-align: center;
+    }
+    .topbar strong { color: var(--amber); }
+    header.site {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      padding: 1rem 0;
+      flex-wrap: wrap;
+    }
+    .logo {
+      font-family: var(--font-serif);
+      font-weight: 700;
+      font-size: 1.15rem;
+      color: var(--navy);
+      text-decoration: none;
+    }
+    .logo span { color: var(--amber-dark); }
+    .phone-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      background: var(--amber);
+      color: var(--navy);
+      font-weight: 700;
+      font-size: 0.95rem;
+      padding: 0.7rem 1.15rem;
+      border-radius: 999px;
+      text-decoration: none;
+      box-shadow: 0 4px 14px rgba(232, 145, 45, 0.35);
+    }
+    .phone-btn:hover { background: #f0a54a; }
+    .hero {
+      background: linear-gradient(160deg, var(--navy) 0%, var(--navy-mid) 70%);
+      color: var(--sand);
+      border-radius: 18px;
+      padding: 2rem 1.35rem 2.25rem;
+      margin-bottom: 1.75rem;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::after {
+      content: "";
+      position: absolute;
+      width: 220px; height: 220px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(232,145,45,0.25), transparent 70%);
+      right: -40px; top: -60px;
+      pointer-events: none;
+    }
+    .hero h1 {
+      font-family: var(--font-serif);
+      font-size: clamp(1.75rem, 5vw, 2.45rem);
+      line-height: 1.15;
+      margin: 0 0 0.75rem;
+      max-width: 16ch;
+      position: relative;
+      z-index: 1;
+    }
+    .hero p {
+      margin: 0 0 1.25rem;
+      color: var(--sand-deep);
+      max-width: 36ch;
+      position: relative;
+      z-index: 1;
+    }
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.65rem;
+      position: relative;
+      z-index: 1;
+    }
+    .btn-secondary {
+      display: inline-flex;
+      align-items: center;
+      padding: 0.7rem 1.1rem;
+      border-radius: 999px;
+      border: 1px solid rgba(245,239,230,0.35);
+      color: var(--sand);
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.9rem;
+    }
+    .trust {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0.65rem;
+      margin: 1.25rem 0 0;
+      position: relative;
+      z-index: 1;
+    }
+    .trust div {
+      background: rgba(255,255,255,0.08);
+      border-radius: 10px;
+      padding: 0.65rem 0.5rem;
+      text-align: center;
+      font-size: 0.72rem;
+    }
+    .trust strong { display: block; font-size: 0.95rem; color: var(--amber); margin-bottom: 0.15rem; }
+    section { margin-bottom: 2.25rem; }
+    h2 {
+      font-family: var(--font-serif);
+      font-size: 1.45rem;
+      margin: 0 0 0.85rem;
+      color: var(--navy);
+    }
+    .services { display: grid; gap: 0.75rem; }
+    @media (min-width: 640px) {
+      .services { grid-template-columns: repeat(3, 1fr); }
+      .hero { padding: 2.5rem 2rem; }
+    }
+    .svc {
+      background: var(--white);
+      border: 1px solid var(--sand-deep);
+      border-radius: var(--radius);
+      padding: 1rem;
+    }
+    .svc h3 { margin: 0 0 0.35rem; font-size: 1rem; color: var(--navy); }
+    .svc p { margin: 0; font-size: 0.88rem; color: var(--muted); }
+    .reviews-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+    }
+    .reviews-head .avg { font-size: 0.9rem; color: var(--muted); }
+    .stack-3d { --stack-bg: #fff; --stack-fg: var(--ink); }
+    .cta-band {
+      background: var(--navy);
+      color: var(--sand);
+      border-radius: 16px;
+      padding: 1.5rem 1.25rem;
+      text-align: center;
+    }
+    .cta-band h2 { color: var(--sand); margin-bottom: 0.4rem; }
+    .cta-band p { margin: 0 0 1rem; color: var(--sand-deep); font-size: 0.95rem; }
+    footer {
+      text-align: center;
+      font-size: 0.75rem;
+      color: var(--muted);
+      padding: 0 0 2rem;
+    }
+    footer a { color: var(--navy-mid); }
+  </style>
+</head>
+<body>
+  <div class="topbar">Licensed · Bonded · Same-day slots in Harbor County · <strong>Open until 8pm</strong></div>
+  <div class="wrap">
+    <header class="site">
+      <a class="logo" href="#">Harbor Line <span>Home Care</span></a>
+      <a class="phone-btn" href="tel:+15550148200">📞 (555) 014-8200</a>
+    </header>
+
+    <section class="hero">
+      <h1>Reliable home fixes. Neighbors first.</h1>
+      <p>Fictional local plumbing &amp; home-care crew. Clear pricing, photo updates, and a human on the phone — not a call tree.</p>
+      <div class="hero-actions">
+        <a class="phone-btn" href="tel:+15550148200">Call for a free estimate</a>
+        <a class="btn-secondary" href="#reviews">See neighbor reviews</a>
+      </div>
+      <div class="trust">
+        <div><strong>18 yrs</strong> on the peninsula</div>
+        <div><strong>4.9★</strong> from 312 reviews</div>
+        <div><strong>No</strong> surprise fees</div>
+      </div>
+    </section>
+
+    <section>
+      <h2>What we handle</h2>
+      <div class="services">
+        <article class="svc">
+          <h3>Leaks &amp; drains</h3>
+          <p>Camera-ready drain clearing, fixture swaps, and overnight leak containment.</p>
+        </article>
+        <article class="svc">
+          <h3>Water heaters</h3>
+          <p>Tank and tankless installs with written warranties and same-week booking.</p>
+        </article>
+        <article class="svc">
+          <h3>Seasonal checks</h3>
+          <p>Winterization, sump tests, and spring pressure checks for coastal homes.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="reviews">
+      <div class="reviews-head">
+        <h2>Recent reviews</h2>
+        <span class="avg">CSS 3D card stack · hover to fan</span>
+      </div>
+      <div class="stack-3d" tabindex="0" aria-label="Review card stack">
+        <div class="stack-3d-inner">
+          <article class="stack-card">
+            <div class="stack-stars">★★★★★</div>
+            <p class="stack-quote">“Showed up in an hour, fixed the kitchen line, left the cabinet cleaner than they found it.”</p>
+            <p class="stack-who">— Jordan M., Pier District</p>
+          </article>
+          <article class="stack-card">
+            <div class="stack-stars">★★★★★</div>
+            <p class="stack-quote">“Texted photos before quoting. No pressure, fair price, back the next morning.”</p>
+            <p class="stack-who">— Priya S., North Quay</p>
+          </article>
+          <article class="stack-card">
+            <div class="stack-stars">★★★★☆</div>
+            <p class="stack-quote">“Heater install was smooth. Would book again for the annual check.”</p>
+            <p class="stack-who">— Eli &amp; Sam, Cedar Hill</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta-band">
+      <h2>Need help tonight?</h2>
+      <p>Dispatch line open until 8pm. Leave a voicemail after hours — we call back by 8am.</p>
+      <a class="phone-btn" href="tel:+15550148200">Call (555) 014-8200</a>
+    </section>
+
+    <footer>
+      Harbor Line Home Care — fictional Surface Lab sample ·
+      <a href="../../index.html">← Gallery</a>
+    </footer>
+  </div>
+</body>
+</html>

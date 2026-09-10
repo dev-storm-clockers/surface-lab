@@ -1,0 +1,68 @@
+/* CSS 3D perspective review / card stack */
+.stack-3d {
+  perspective: 1100px;
+  perspective-origin: 50% 40%;
+  position: relative;
+  min-height: 11rem;
+  padding: 1rem 0 2rem;
+}
+.stack-3d-inner {
+  position: relative;
+  width: min(100%, 320px);
+  margin: 0 auto;
+  transform-style: preserve-3d;
+  height: 9.5rem;
+}
+.stack-card {
+  position: absolute;
+  inset: 0;
+  border-radius: 12px;
+  padding: 1rem 1.1rem;
+  background: var(--stack-bg, #fff);
+  color: var(--stack-fg, #1a1a1a);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.18);
+  transform-style: preserve-3d;
+  transition: transform 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+  border: 1px solid rgba(0, 0, 0, 0.06);
+}
+.stack-card:nth-child(1) {
+  transform: translateZ(40px) rotateY(-6deg) translateX(-8%);
+  z-index: 3;
+}
+.stack-card:nth-child(2) {
+  transform: translateZ(10px) rotateY(4deg) translateX(6%) translateY(8px);
+  z-index: 2;
+  opacity: 0.92;
+}
+.stack-card:nth-child(3) {
+  transform: translateZ(-20px) rotateY(-2deg) translateX(14%) translateY(16px);
+  z-index: 1;
+  opacity: 0.78;
+}
+.stack-3d:hover .stack-card:nth-child(1),
+.stack-3d:focus-within .stack-card:nth-child(1) {
+  transform: translateZ(56px) rotateY(-10deg) translateX(-12%);
+}
+.stack-3d:hover .stack-card:nth-child(2),
+.stack-3d:focus-within .stack-card:nth-child(2) {
+  transform: translateZ(24px) rotateY(8deg) translateX(10%) translateY(6px);
+}
+.stack-stars {
+  color: #e8a317;
+  letter-spacing: 0.05em;
+  font-size: 0.85rem;
+  margin-bottom: 0.35rem;
+}
+.stack-quote {
+  font-size: 0.88rem;
+  margin: 0 0 0.5rem;
+  line-height: 1.4;
+}
+.stack-who {
+  font-size: 0.75rem;
+  opacity: 0.7;
+  margin: 0;
+}
+@media (prefers-reduced-motion: reduce) {
+  .stack-card { transition: none; }
+}

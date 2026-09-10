@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Nova Rhee · Studio — Creator Sample</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@500;600;700;800&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --ink: #12081c;
+      --violet: #2a1540;
+      --blush: #f0a6ca;
+      --glow: #c4b5fd;
+      --mist: #fdf6ff;
+      --muted: #b8a8c9;
+      --card: rgba(255,255,255,0.06);
+      --font-display: "Syne", system-ui, sans-serif;
+      --font-mono: "IBM Plex Mono", ui-monospace, monospace;
+    }
+    *, *::before, *::after { box-sizing: border-box; }
+    body {
+      margin: 0;
+      min-height: 100dvh;
+      font-family: var(--font-display);
+      background: var(--ink);
+      color: var(--mist);
+      line-height: 1.45;
+      overflow-x: hidden;
+    }
+    a { color: inherit; text-decoration: none; }
+    .hero-shell {
+      position: relative;
+      min-height: 100dvh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 1.5rem 1rem 2.5rem;
+    }
+    #orb-canvas {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 55vh;
+      max-height: 420px;
+      pointer-events: none;
+      opacity: 0.85;
+      z-index: 0;
+    }
+    .content {
+      position: relative;
+      z-index: 1;
+      width: min(400px, 100%);
+      margin-top: 2.5rem;
+      text-align: center;
+    }
+    .avatar {
+      width: 96px;
+      height: 96px;
+      border-radius: 50%;
+      margin: 0 auto 1rem;
+      background:
+        radial-gradient(circle at 30% 25%, #fff 0%, var(--blush) 35%, var(--glow) 70%, var(--violet) 100%);
+      border: 3px solid rgba(240,166,202,0.45);
+      box-shadow: 0 0 40px rgba(196,181,253,0.35);
+    }
+    .handle {
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      color: var(--muted);
+      letter-spacing: 0.08em;
+      margin: 0 0 0.35rem;
+    }
+    h1 {
+      margin: 0 0 0.5rem;
+      font-size: clamp(1.6rem, 6vw, 2rem);
+      font-weight: 800;
+      letter-spacing: -0.02em;
+    }
+    .tagline {
+      margin: 0 0 1.5rem;
+      color: var(--muted);
+      font-size: 0.95rem;
+      font-weight: 500;
+    }
+    .links {
+      display: grid;
+      gap: 0.65rem;
+      margin-bottom: 2rem;
+    }
+    .link {
+      display: block;
+      padding: 0.9rem 1rem;
+      border-radius: 999px;
+      background: var(--card);
+      border: 1px solid rgba(240,166,202,0.22);
+      font-weight: 600;
+      font-size: 0.95rem;
+      backdrop-filter: blur(8px);
+      transition: border-color 0.2s, background 0.2s, transform 0.15s;
+    }
+    .link:hover, .link:focus-visible {
+      border-color: var(--blush);
+      background: rgba(240,166,202,0.12);
+      transform: translateY(-1px);
+    }
+    .link small {
+      display: block;
+      font-family: var(--font-mono);
+      font-size: 0.65rem;
+      font-weight: 400;
+      color: var(--muted);
+      margin-top: 0.15rem;
+    }
+    .work-label {
+      font-family: var(--font-mono);
+      font-size: 0.7rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--glow);
+      margin: 0 0 0.75rem;
+    }
+    .work {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.65rem;
+      text-align: left;
+    }
+    .tile {
+      border-radius: 14px;
+      padding: 1rem 0.85rem;
+      min-height: 100px;
+      background: linear-gradient(145deg, rgba(61,42,92,0.9), rgba(18,8,28,0.95));
+      border: 1px solid rgba(196,181,253,0.2);
+    }
+    .tile.wide {
+      grid-column: 1 / -1;
+      background: linear-gradient(120deg, rgba(240,166,202,0.25), rgba(61,42,92,0.85));
+    }
+    .tile h3 {
+      margin: 0 0 0.25rem;
+      font-size: 0.9rem;
+      font-weight: 700;
+    }
+    .tile p {
+      margin: 0;
+      font-size: 0.75rem;
+      color: var(--muted);
+      font-family: var(--font-mono);
+    }
+    .back {
+      margin-top: 2rem;
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      color: var(--muted);
+    }
+    .back a { color: var(--blush); }
+    .note-3d {
+      font-family: var(--font-mono);
+      font-size: 0.65rem;
+      color: var(--muted);
+      margin-top: 0.5rem;
+      opacity: 0.8;
+    }
+  </style>
+</head>
+<body>
+  <div class="hero-shell">
+    <canvas id="orb-canvas" aria-hidden="true"></canvas>
+    <div class="content">
+      <div class="avatar" role="img" aria-label="Abstract avatar for Nova Rhee"></div>
+      <p class="handle">@novarhee · fictional</p>
+      <h1>Nova Rhee</h1>
+      <p class="tagline">Editorial illustration · soft sci-fi worlds · commissioned prints</p>
+
+      <nav class="links" aria-label="Profile links">
+        <a class="link" href="#work">Featured work<small>selected commissions</small></a>
+        <a class="link" href="#">Shop prints<small>kiln-and-cotton collab · demo</small></a>
+        <a class="link" href="#">Newsletter<small>monthly sketch drops</small></a>
+        <a class="link" href="mailto:hello@novarhee.example">Book a project<small>hello@novarhee.example</small></a>
+      </nav>
+
+      <p class="work-label" id="work">Featured</p>
+      <div class="work">
+        <article class="tile wide">
+          <h3>Lunar Transit series</h3>
+          <p>12 ink plates · gallery folio 2025</p>
+        </article>
+        <article class="tile">
+          <h3>Brand marks</h3>
+          <p>3 studio locks</p>
+        </article>
+        <article class="tile">
+          <h3>Zine #07</h3>
+          <p>risograph run</p>
+        </article>
+      </div>
+
+      <p class="note-3d">3D: lightweight three.js orb · pauses if reduced-motion</p>
+      <p class="back"><a href="../../index.html">← Surface Lab gallery</a></p>
+    </div>
+  </div>
+
+  <script type="importmap">
+  {
+    "imports": {
+      "three": "https://unpkg.com/three@0.160.0/build/three.module.js"
+    }
+  }
+  </script>
+  <script type="module">
+    import * as THREE from "three";
+
+    const canvas = document.getElementById("orb-canvas");
+    const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    const narrow = window.matchMedia("(max-width: 480px)").matches;
+
+    // Skip WebGL on reduced motion; show soft CSS fallback via canvas clear
+    if (reduce || !canvas.getContext) {
+      canvas.style.display = "none";
+    } else {
+      const renderer = new THREE.WebGLRenderer({ canvas, antialias: !narrow, alpha: true, powerPreference: "low-power" });
+      renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, narrow ? 1.25 : 1.75));
+      const scene = new THREE.Scene();
+      const camera = new THREE.PerspectiveCamera(42, 1, 0.1, 100);
+      camera.position.z = 3.2;
+
+      const geo = new THREE.IcosahedronGeometry(1.05, narrow ? 1 : 2);
+      const mat = new THREE.MeshStandardMaterial({
+        color: 0xf0a6ca,
+        emissive: 0x3d2a5c,
+        emissiveIntensity: 0.35,
+        metalness: 0.25,
+        roughness: 0.35,
+        flatShading: true,
+      });
+      const mesh = new THREE.Mesh(geo, mat);
+      scene.add(mesh);
+
+      const wire = new THREE.Mesh(
+        new THREE.IcosahedronGeometry(1.18, 1),
+        new THREE.MeshBasicMaterial({ color: 0xc4b5fd, wireframe: true, transparent: true, opacity: 0.28 })
+      );
+      scene.add(wire);
+
+      const light = new THREE.DirectionalLight(0xffffff, 1.1);
+      light.position.set(2, 2, 3);
+      scene.add(light);
+      scene.add(new THREE.AmbientLight(0x6b4c9a, 0.55));
+
+      function resize() {
+        const w = canvas.clientWidth;
+        const h = canvas.clientHeight;
+        renderer.setSize(w, h, false);
+        camera.aspect = w / Math.max(h, 1);
+        camera.updateProjectionMatrix();
+      }
+      resize();
+      window.addEventListener("resize", resize);
+
+      let raf = 0;
+      function frame(t) {
+        raf = requestAnimationFrame(frame);
+        const s = t * 0.00035;
+        mesh.rotation.y = s;
+        mesh.rotation.x = s * 0.4;
+        wire.rotation.y = -s * 0.6;
+        renderer.render(scene, camera);
+      }
+      raf = requestAnimationFrame(frame);
+
+      document.addEventListener("visibilitychange", () => {
+        if (document.hidden) cancelAnimationFrame(raf);
+        else raf = requestAnimationFrame(frame);
+      });
+    }
+  </script>
+</body>
+</html>

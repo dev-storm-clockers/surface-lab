@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Pebble &amp; Wick — Candles &amp; Home Goods</title>
+  <meta name="description" content="Small-batch candles and quiet home goods from Pebble &amp; Wick." />
+  <link rel="stylesheet" href="shop.css" />
+</head>
+<body>
+  <header class="top">
+    <div class="wrap top-inner">
+      <a class="logo" href="./">Pebble &amp; Wick</a>
+      <a class="nav-cta" href="#contact">Contact</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero wrap">
+      <div class="hero-copy">
+        <p class="eyebrow">Hand-poured · small batch</p>
+        <h1>Warm light for quiet rooms</h1>
+        <p class="lede">
+          Soy-blend candles, ceramic vessels, and soft scents named after places
+          that don’t rush you.
+        </p>
+        <a class="btn" href="#products">Shop the trio</a>
+      </div>
+      <div class="hero-3d" aria-label="Decorative 3D candle glow">
+        <canvas id="wick-canvas" width="360" height="360"></canvas>
+        <p class="hero-3d-note">Subtle WebGL hero</p>
+      </div>
+    </section>
+
+    <section id="products" class="products wrap">
+      <h2>This week’s pour</h2>
+      <div class="product-grid">
+        <article class="product" data-tilt data-tilt-max="8">
+          <div class="swatch s1" aria-hidden="true"></div>
+          <h3>Driftwood Dusk</h3>
+          <p class="price">$28</p>
+          <p class="desc">Salt air, cedar shavings, a hint of smoked vanilla.</p>
+          <a class="buy" href="#contact">Buy / inquire</a>
+        </article>
+        <article class="product" data-tilt data-tilt-max="8">
+          <div class="swatch s2" aria-hidden="true"></div>
+          <h3>Clay &amp; Citrus</h3>
+          <p class="price">$26</p>
+          <p class="desc">Bergamot peel over warm terracotta and white tea.</p>
+          <a class="buy" href="#contact">Buy / inquire</a>
+        </article>
+        <article class="product" data-tilt data-tilt-max="8">
+          <div class="swatch s3" aria-hidden="true"></div>
+          <h3>Library Ember</h3>
+          <p class="price">$30</p>
+          <p class="desc">Worn leather, soft amber, and a page-turn of sandalwood.</p>
+          <a class="buy" href="#contact">Buy / inquire</a>
+        </article>
+      </div>
+    </section>
+
+    <section id="contact" class="contact wrap">
+      <h2>Buy or say hello</h2>
+      <p>Demo shop — no checkout. Email for wholesale or local pickup stories.</p>
+      <div class="contact-row">
+        <a class="btn" href="mailto:hello@pebblewick.example">Email Pebble &amp; Wick</a>
+        <a class="btn btn-ghost" href="tel:+15550192800">(555) 019-2800</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="foot wrap">
+    <p>Pebble &amp; Wick · fictional sample for Surface Lab</p>
+    <a href="../../">&larr; Gallery</a>
+  </footer>
+
+  <script src="../../shared/tilt.js" defer></script>
+
+</body>
+</html>
