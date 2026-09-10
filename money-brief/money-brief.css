@@ -1,0 +1,209 @@
+/* Surface Lab — Money Brief (reuses gallery tokens lightly) */
+:root {
+  --bg: #0c0e12;
+  --surface: #161a22;
+  --border: #2a3140;
+  --text: #e8ecf4;
+  --muted: #8b95a8;
+  --accent: #6ee7b7;
+  --accent2: #93c5fd;
+  --radius: 14px;
+  --font: "Segoe UI", system-ui, -apple-system, sans-serif;
+}
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  font-family: var(--font);
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.55;
+  min-height: 100dvh;
+}
+a { color: var(--accent2); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+.mb-wrap {
+  width: min(920px, 100% - 2rem);
+  margin-inline: auto;
+  padding-bottom: 3rem;
+}
+.mb-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem 1.25rem;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.25rem 0;
+  border-bottom: 1px solid var(--border);
+  font-size: 0.85rem;
+}
+.mb-nav .brand {
+  color: var(--accent);
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  text-decoration: none;
+}
+.mb-nav .brand:hover { text-decoration: none; opacity: 0.9; }
+.mb-nav-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65rem 1rem;
+}
+.mb-nav-links a { color: var(--muted); }
+.mb-nav-links a:hover { color: var(--text); }
+
+.mb-hero {
+  padding: 2rem 0 1.75rem;
+}
+.mb-badge {
+  display: inline-block;
+  font-size: 0.7rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent);
+  border: 1px solid color-mix(in srgb, var(--accent) 40%, transparent);
+  padding: 0.25rem 0.6rem;
+  border-radius: 999px;
+  margin-bottom: 0.85rem;
+}
+.mb-hero h1 {
+  margin: 0 0 0.65rem;
+  font-size: clamp(1.55rem, 4.2vw, 2.15rem);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+.mb-oneliner {
+  margin: 0 0 0.85rem;
+  font-size: 1.05rem;
+  max-width: 38rem;
+}
+.mb-who {
+  margin: 0;
+  color: var(--muted);
+  max-width: 36rem;
+  font-size: 0.95rem;
+}
+.mb-who strong { color: var(--text); font-weight: 600; }
+
+.mb-skus {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: 1fr;
+  margin: 0.5rem 0 1.75rem;
+}
+@media (min-width: 720px) {
+  .mb-skus { grid-template-columns: repeat(3, 1fr); }
+}
+.mb-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.15rem 1.2rem 1.3rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+}
+.mb-card.flagship {
+  border-color: color-mix(in srgb, var(--accent) 45%, var(--border));
+}
+.mb-card h2 {
+  margin: 0;
+  font-size: 1.05rem;
+}
+.mb-tag {
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+.mb-price {
+  font-size: 1.35rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+.mb-price span {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--muted);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  margin-left: 0.25rem;
+}
+.mb-desc {
+  margin: 0;
+  font-size: 0.88rem;
+  color: var(--muted);
+  flex: 1;
+}
+.mb-cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 0.35rem;
+  padding: 0.55rem 0.9rem;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: transparent;
+  color: var(--muted);
+  font: inherit;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: default;
+  text-decoration: none;
+  width: 100%;
+}
+.mb-cta:hover { text-decoration: none; }
+.mb-cta.primary {
+  border-color: color-mix(in srgb, var(--accent) 50%, var(--border));
+  color: var(--accent);
+}
+
+.mb-optional {
+  background: var(--surface);
+  border: 1px dashed var(--border);
+  border-radius: var(--radius);
+  padding: 1.1rem 1.2rem;
+  margin-bottom: 1.75rem;
+}
+.mb-optional h3 {
+  margin: 0 0 0.55rem;
+  font-size: 0.95rem;
+}
+.mb-optional ul {
+  margin: 0;
+  padding-left: 1.15rem;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+.mb-optional li { margin-bottom: 0.35rem; }
+.mb-optional strong { color: var(--text); }
+
+.mb-proof {
+  border-top: 1px solid var(--border);
+  padding-top: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+.mb-proof h3 {
+  margin: 0 0 0.65rem;
+  font-size: 0.95rem;
+}
+.mb-proof-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 0.85rem;
+  font-size: 0.9rem;
+}
+.mb-note {
+  font-size: 0.8rem;
+  color: var(--muted);
+  margin: 0 0 1.25rem;
+}
+.mb-footer {
+  border-top: 1px solid var(--border);
+  padding: 1.25rem 0 0;
+  font-size: 0.8rem;
+  color: var(--muted);
+}
