@@ -10,10 +10,10 @@
 - **root:** /workspace/surface-lab
 - **slug:** surface-lab
 - **owner_agent:** Build Head
-- **ready_for_quality:** no
+- **ready_for_quality:** yes
 - **pass:** 4
 - **live_url:** https://dev-storm-clockers.github.io/surface-lab/
-- **notes:** Astro twin Pages-path fix ready — local dual links relative; Astro base=/surface-lab/twins/editorial-astro/dist. ready=no until Pages live smoke. Static editorial intact. Prefer STOP. No Lilly. TLS parked Pages-only.
+- **notes:** Astro twin live smoke PASS @ 4577a59. Money Brief page at money-brief/ (CTA stub / not wired; ready_for_quality: no). Gallery links Money Brief / Packs. TLS Pages-only; no Lilly; ND/DD untouched.
 
 ## Browse
 
@@ -144,7 +144,7 @@ Shared:
 - **Static twin:** samples/editorial/ via http://127.0.0.1:8765/samples/editorial/
 - **Gallery:** editorial card links Static and Astro
 - **Differs from static:** Astro/Vite toolchain, layout + global CSS import, OG meta tags added, footer labels twin; copy and visual intent match. No content collections yet. See twins/editorial-astro/TWIN-DIFF.md.
-- **ready_for_quality:** no until Build smoke of this twin pass.
+- **ready_for_quality:** yes (live smoke PASS @ 4577a59)
 
 ## Hard stops checklist (Pass 4)
 
@@ -153,7 +153,20 @@ Shared:
 - [x] Visual systems distinct (palette + type + layout) — not recolored clones
 - [x] NightDeck / Dungeon Dad untouched
 - [x] ARTIFACT.md updated (paths, style tags, pass 4)
-- [ ] ready_for_quality → no until Astro twin Build smoke
+- [x] ready_for_quality → yes (live smoke PASS @ 4577a59)
+
+
+## Money Brief Page (Packs)
+
+- **path:** `money-brief/` → `/workspace/surface-lab/money-brief/index.html`
+- **live_url (Pages):** https://dev-storm-clockers.github.io/surface-lab/money-brief/
+- **local:** http://127.0.0.1:8765/money-brief/
+- **ready_for_quality:** no
+- **buy CTA:** stub / not wired (Coming soon · Notify — no Stripe/Gumroad)
+- **SKUs shown (CAD bands):** Editorial Twin $79–99 · Token Pack $39–59 · Diff Kit $29–49 · optional Pack Pro $149–179 · Commercial 2×
+- **gallery link:** header “Money Brief / Packs” + footer link
+- **proof links:** static twin `samples/editorial/`, Astro `twins/editorial-astro/dist/`, gallery `/`, design-refs/
+- **notes:** Marketing page only per AC-money-brief-page.md / MONEY-BRIEF-template-pack.md. No checkout · no zip fulfillment · ND/DD untouched · no Lilly.
 
 ## Out of scope (held)
 
