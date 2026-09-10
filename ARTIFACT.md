@@ -10,10 +10,10 @@
 - **root:** /workspace/surface-lab
 - **slug:** surface-lab
 - **owner_agent:** Build Head
-- **ready_for_quality:** no
+- **ready_for_quality:** yes
 - **pass:** 3
 - **live_url:** https://dev-storm-clockers.github.io/surface-lab/
-- **notes:** Pass 3 local smoke PASS 2026-09-10 — gallery 9 + style tags; GRIDLOCK / Lumen / VOLT distinct. Pages push pending; ready stays no until live re-smoke. Prefer STOP. No Lilly. NightDeck/Dungeon Dad untouched.
+- **notes:** Pass 3 live smoke PASS on Pages @ f053f1c — gallery 9 + GRIDLOCK / Lumen / VOLT distinct. Prefer STOP. No Lilly. NightDeck/Dungeon Dad untouched. ready_for_quality=yes.
 
 ## Browse
 
@@ -116,7 +116,7 @@ Shared:
 - [x] Visual systems distinct (palette + type + layout) — not recolored clones
 - [x] NightDeck / Dungeon Dad untouched
 - [x] ARTIFACT.md updated (paths, style tags, pass 3)
-- [ ] ready_for_quality → yes (held at **no** until Quality/Phil gate)
+- [x] ready_for_quality → yes (flipped after live smoke PASS @ f053f1c)
 
 ## Out of scope (held)
 
