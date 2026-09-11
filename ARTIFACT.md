@@ -10,10 +10,10 @@
 - **root:** /workspace/surface-lab
 - **slug:** surface-lab
 - **owner_agent:** Build Head
-- **ready_for_quality:** yes
-- **pass:** Money Brief Gumroad CTAs (live `3214318`)
-- **live_url:** https://dev-storm-clockers.github.io/surface-lab/money-brief/
-- **notes:** Gumroad Buy CTAs wired locally via money-brief/gumroad.json + gumroad.js. Stub Gumroad-shaped URLs until Phil pastes real product links. **ready_for_quality: yes** live smoke PASS @ `3214318`. ND/DD/Meridian/Lilly untouched. No Stripe.
+- **ready_for_quality:** no
+- **pass:** Editorial Twin product page (`/buy/`)
+- **live_url:** https://dev-storm-clockers.github.io/surface-lab/buy/
+- **notes:** Single-SKU buy page from SELL-editorial-twin.md. CTA uses config key `editorialTwin` only (`money-brief/gumroad.json` + `buy/gumroad.js`). Pack tarball `/workspace/surface-lab/pack-editorial-twin.tgz`. Money Brief multi-SKU theater soft-redirected to `/buy/`. Gallery links “Editorial Twin” → `buy/`. ND/DD/Meridian/Lilly untouched. No Stripe. **ready_for_quality: no** (awaiting Quality).
 
 ## Browse
 
@@ -156,21 +156,24 @@ Shared:
 - [x] ready_for_quality → yes (live smoke PASS @ 4577a59)
 
 
-## Money Brief Page (Packs)
+## Editorial Twin product page (`/buy/`)
 
-- **path:** `money-brief/` → `/workspace/surface-lab/money-brief/index.html`
-- **live_url (Pages):** https://dev-storm-clockers.github.io/surface-lab/money-brief/
-- **local:** http://127.0.0.1:8765/money-brief/
-- **ready_for_quality:** yes (live smoke PASS @ `3214318`)
-- **buy CTA:** Buy on Gumroad — config-driven (`money-brief/gumroad.json` + `money-brief/gumroad.js`); opens new tab
-- **gumroad config:** `money-brief/gumroad.json`
-  - Keys: `editorialTwin`, `tokenPack`, `diffKit`, `packPro` (optional Buy), `commercial` (null = note-only)
-  - **How Phil updates URLs:** edit `money-brief/gumroad.json` only — paste real Gumroad product URLs; no HTML rebuild. `_todo` field in JSON reminds.
-  - **Stub note:** current values are Gumroad-shaped placeholders (`https://philasplin.gumroad.com/l/…`). Replace with real product links when products exist. Missing/null → href `#`.
-- **SKUs shown (CAD bands locked):** Editorial Twin $79–99 · Token Pack $39–59 · Diff Kit $29–49 · optional Pack Pro $149–179 · Commercial 2× (note-only)
-- **gallery link:** header “Money Brief / Packs” + footer link
-- **proof links:** static twin `samples/editorial/`, Astro `twins/editorial-astro/dist/`, gallery `/`, design-refs/
-- **notes:** Gumroad CTAs per AC-money-brief-gumroad.md. No Stripe · no zip fulfillment · ND/DD/Meridian untouched · no Lilly.
+- **path:** `buy/` → `/workspace/surface-lab/buy/index.html` (+ `buy.css`, `gumroad.js`)
+- **page URL (Pages):** https://dev-storm-clockers.github.io/surface-lab/buy/
+- **local:** http://127.0.0.1:8765/buy/
+- **ready_for_quality:** no
+- **copy source:** `SELL-editorial-twin.md` (title, subtitle, body, includes, does-not-include, CTA)
+- **price:** $89 CAD fixed (no bands)
+- **proof above the fold:**
+  - Static: https://dev-storm-clockers.github.io/surface-lab/samples/editorial/
+  - Astro: https://dev-storm-clockers.github.io/surface-lab/twins/editorial-astro/dist/
+- **Buy CTA:** “Buy — $89 CAD” → Gumroad URL from config key **`editorialTwin` only** (`target=_blank` `rel=noopener`)
+- **config path:** `/workspace/surface-lab/money-brief/gumroad.json` (key `editorialTwin`; stub OK until CoS/Phil pastes real product URL — no HTML rebuild)
+- **JS:** `buy/gumroad.js` fetches `../money-brief/gumroad.json` and wires `[data-sku="editorialTwin"]` only
+- **pack tarball:** `/workspace/surface-lab/pack-editorial-twin.tgz`
+- **gallery:** header + footer “Editorial Twin” → `buy/`; editorial card also has Buy link
+- **money-brief:** soft-redirect (meta refresh + banner) → `../buy/` — multi-SKU brief retired from public pitch
+- **out of scope held:** Who-pays / flagship / bands / Diff / Token / Pack Pro / ladder / other SKUs · Stripe · ND/DD/Meridian/Lilly
 
 ## Out of scope (held)
 

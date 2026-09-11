@@ -3,100 +3,48 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Surface Lab — Money Brief · Packs</title>
-  <meta name="description" content="Surface Lab packs: Editorial Twin, Token Pack, Diff Kit — CAD price bands. Buy on Gumroad (config-driven)." />
-  <link rel="stylesheet" href="money-brief.css" />
+  <title>Moved — Editorial Twin buy</title>
+  <meta name="description" content="Multi-SKU Money Brief retired. Buy Editorial Twin at /buy/." />
+  <meta http-equiv="refresh" content="2;url=../buy/" />
+  <link rel="canonical" href="../buy/" />
+  <style>
+    :root {
+      --bg: #0c0e12; --text: #e8ecf4; --muted: #8b95a8;
+      --accent: #6ee7b7; --accent2: #93c5fd; --border: #2a3140; --surface: #161a22;
+      --font: "Segoe UI", system-ui, -apple-system, sans-serif;
+    }
+    body {
+      margin: 0; min-height: 100dvh; font-family: var(--font);
+      background: var(--bg); color: var(--text); line-height: 1.55;
+      display: grid; place-items: center; padding: 1.5rem;
+    }
+    .box {
+      width: min(480px, 100%);
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 1.5rem 1.35rem;
+    }
+    .badge {
+      display: inline-block; font-size: 0.7rem; letter-spacing: 0.12em;
+      text-transform: uppercase; color: var(--accent);
+      border: 1px solid color-mix(in srgb, var(--accent) 40%, transparent);
+      padding: 0.25rem 0.6rem; border-radius: 999px; margin-bottom: 0.85rem;
+    }
+    h1 { margin: 0 0 0.65rem; font-size: 1.35rem; }
+    p { margin: 0 0 0.85rem; color: var(--muted); font-size: 0.95rem; }
+    a { color: var(--accent2); font-weight: 600; }
+  </style>
 </head>
 <body>
-  <div class="mb-wrap">
-    <nav class="mb-nav" aria-label="Money Brief">
-      <a class="brand" href="../">Surface Lab</a>
-      <div class="mb-nav-links">
-        <a href="../">Gallery</a>
-        <a href="../samples/editorial/">Static twin</a>
-        <a href="../twins/editorial-astro/dist/">Astro twin</a>
-        <a href="../design-refs/">Design refs</a>
-      </div>
-    </nav>
-
-    <header class="mb-hero">
-      <span class="mb-badge">Money Brief · Packs</span>
-      <h1>Three packs. Credible page this week.</h1>
-      <p class="mb-oneliner">
-        Sell three packs: <strong>Editorial Twin</strong>, <strong>Token Pack</strong>,
-        <strong>Diff Kit</strong> — then storefront → fulfillment/license → lead magnet.
-      </p>
-      <p class="mb-who">
-        <strong>Who pays:</strong> Freelance designers, small agencies, solo operators
-        who need a credible page this week.
-      </p>
-    </header>
-
-    <section class="mb-skus" aria-label="SKU price bands">
-      <article class="mb-card flagship">
-        <span class="mb-tag">Flagship</span>
-        <h2>Editorial Twin</h2>
-        <p class="mb-price">$79–99 <span>CAD</span></p>
-        <p class="mb-desc">
-          Northbound Review static + Astro twin + migration/SEO notes.
-          Astro included — no separate add-on. Band / starting range.
-        </p>
-        <a class="mb-cta primary" data-sku="editorialTwin" href="#" target="_blank" rel="noopener">Buy on Gumroad</a>
-      </article>
-
-      <article class="mb-card">
-        <span class="mb-tag">Optional add-on</span>
-        <h2>Token Pack</h2>
-        <p class="mb-price">$39–59 <span>CAD</span></p>
-        <p class="mb-desc">
-          Shared design tokens + restyle guide from design-refs.
-          Band / starting range.
-        </p>
-        <a class="mb-cta" data-sku="tokenPack" href="#" target="_blank" rel="noopener">Buy on Gumroad</a>
-      </article>
-
-      <article class="mb-card">
-        <span class="mb-tag">Standalone</span>
-        <h2>Diff Kit</h2>
-        <p class="mb-price">$29–49 <span>CAD</span></p>
-        <p class="mb-desc">
-          Twin Diff Kit alone: static↔Astro checklist, must-holds, parity notes
-          (no full twin zip). Education / upsell. Band / starting range.
-        </p>
-        <a class="mb-cta" data-sku="diffKit" href="#" target="_blank" rel="noopener">Buy on Gumroad</a>
-      </article>
-    </section>
-
-    <section class="mb-optional" aria-label="Optional bundle and commercial">
-      <h3>Optional</h3>
-      <ul>
-        <li>
-          <strong>Pack Pro</strong> — Twin + Token + Diff Kit · <strong>$149–179 CAD</strong> (bundle band)
-          <br />
-          <a class="mb-cta" data-sku="packPro" href="#" target="_blank" rel="noopener">Buy on Gumroad</a>
-        </li>
-        <li><strong>Commercial</strong> — Multi-client license on that SKU/bundle · <strong>2×</strong> (one-pager license; note-only until a URL is added in gumroad.json)</li>
-      </ul>
-    </section>
-
-    <p class="mb-note">
-      Buy opens Gumroad (config-driven via <code>gumroad.json</code>; stubs until Phil pastes real product URLs). Prices are CAD bands. No Stripe.
+  <div class="box">
+    <span class="badge">Moved</span>
+    <h1>Moved to Editorial Twin buy</h1>
+    <p>
+      The multi-SKU Money Brief page is retired. One product: Editorial Twin at <strong>$89 CAD</strong>.
     </p>
-
-    <section class="mb-proof" aria-label="Proof links">
-      <h3>Proof</h3>
-      <div class="mb-proof-links">
-        <a href="../samples/editorial/">Static twin →</a>
-        <a href="../twins/editorial-astro/dist/">Astro twin →</a>
-        <a href="../">Gallery →</a>
-        <a href="../design-refs/">Design refs →</a>
-      </div>
-    </section>
-
-    <footer class="mb-footer">
-      Surface Lab · Money Brief · not NightDeck / Dungeon Dad · see ARTIFACT.md
-    </footer>
+    <p><a href="../buy/">Go to Editorial Twin buy →</a></p>
+    <p style="font-size:0.8rem;margin:0;">Redirecting in 2 seconds…</p>
   </div>
-  <script src="gumroad.js" defer></script>
 </body>
 </html>
