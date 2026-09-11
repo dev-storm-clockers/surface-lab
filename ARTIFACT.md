@@ -10,10 +10,10 @@
 - **root:** /workspace/surface-lab
 - **slug:** surface-lab
 - **owner_agent:** Build Head
-- **ready_for_quality:** no
-- **pass:** Editorial Twin product page (`/buy/`)
+- **ready_for_quality:** yes
+- **pass:** Editorial Twin product page (`/buy/` live `1a97a81`)
 - **live_url:** https://dev-storm-clockers.github.io/surface-lab/buy/
-- **notes:** Single-SKU buy page from SELL-editorial-twin.md. CTA uses config key `editorialTwin` only (`money-brief/gumroad.json` + `buy/gumroad.js`). Pack tarball `/workspace/surface-lab/pack-editorial-twin.tgz`. Money Brief multi-SKU theater soft-redirected to `/buy/`. Gallery links “Editorial Twin” → `buy/`. ND/DD/Meridian/Lilly untouched. No Stripe. **ready_for_quality: no** (awaiting Quality).
+- **notes:** Single-SKU buy page from SELL-editorial-twin.md. CTA uses config key `editorialTwin` only (`money-brief/gumroad.json` + `buy/gumroad.js`). Pack tarball `/workspace/surface-lab/pack-editorial-twin.tgz`. Money Brief multi-SKU theater soft-redirected to `/buy/`. Gallery links “Editorial Twin” → `buy/`. ND/DD/Meridian/Lilly untouched. No Stripe. **ready_for_quality: yes** live smoke PASS @ `1a97a81`.
 
 ## Browse
 
@@ -161,7 +161,8 @@ Shared:
 - **path:** `buy/` → `/workspace/surface-lab/buy/index.html` (+ `buy.css`, `gumroad.js`)
 - **page URL (Pages):** https://dev-storm-clockers.github.io/surface-lab/buy/
 - **local:** http://127.0.0.1:8765/buy/
-- **ready_for_quality:** no
+- **live_commit:** `1a97a81`
+- **ready_for_quality:** yes (live smoke PASS @ `1a97a81`)
 - **copy source:** `SELL-editorial-twin.md` (title, subtitle, body, includes, does-not-include, CTA)
 - **price:** $89 CAD fixed (no bands)
 - **proof above the fold:**
