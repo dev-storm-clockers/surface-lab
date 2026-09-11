@@ -10,10 +10,10 @@
 - **root:** /workspace/surface-lab
 - **slug:** surface-lab
 - **owner_agent:** Build Head
-- **ready_for_quality:** yes
-- **pass:** Editorial Twin product page (`/buy/` live `1a97a81`)
+- **ready_for_quality:** no
+- **pass:** Editorial Twin product page (Stripe Payment Link delta)
 - **live_url:** https://dev-storm-clockers.github.io/surface-lab/buy/
-- **notes:** Single-SKU buy page from SELL-editorial-twin.md. CTA uses config key `editorialTwin` only (`money-brief/gumroad.json` + `buy/gumroad.js`). Pack tarball `/workspace/surface-lab/pack-editorial-twin.tgz`. Money Brief multi-SKU theater soft-redirected to `/buy/`. Gallery links “Editorial Twin” → `buy/`. ND/DD/Meridian/Lilly untouched. No Stripe. **ready_for_quality: yes** live smoke PASS @ `1a97a81`.
+- **notes:** Single-SKU buy page from SELL-editorial-twin.md. CTA uses config key `editorialTwin` only (`buy/stripe.json` + `buy/buy.js`). Pack tarball `/workspace/surface-lab/pack-editorial-twin.tgz`. Money Brief multi-SKU theater soft-redirected to `/buy/`. Gallery links “Editorial Twin” → `buy/`. ND/DD/Meridian/Lilly untouched. Gumroad retired from public Buy path. **ready_for_quality: no** — Stripe Payment Link delta pending Build re-smoke.
 
 ## Browse
 
@@ -158,19 +158,19 @@ Shared:
 
 ## Editorial Twin product page (`/buy/`)
 
-- **path:** `buy/` → `/workspace/surface-lab/buy/index.html` (+ `buy.css`, `gumroad.js`)
+- **path:** `buy/` → `/workspace/surface-lab/buy/index.html` (+ `buy.css`, `buy.js`, `stripe.json`)
 - **page URL (Pages):** https://dev-storm-clockers.github.io/surface-lab/buy/
 - **local:** http://127.0.0.1:8765/buy/
 - **live_commit:** `1a97a81`
-- **ready_for_quality:** yes (live smoke PASS @ `1a97a81`)
+- **ready_for_quality:** no (Stripe delta local smoke PASS; flip after Pages)
 - **copy source:** `SELL-editorial-twin.md` (title, subtitle, body, includes, does-not-include, CTA)
 - **price:** $89 CAD fixed (no bands)
 - **proof above the fold:**
   - Static: https://dev-storm-clockers.github.io/surface-lab/samples/editorial/
   - Astro: https://dev-storm-clockers.github.io/surface-lab/twins/editorial-astro/dist/
-- **Buy CTA:** “Buy — $89 CAD” → Gumroad URL from config key **`editorialTwin` only** (`target=_blank` `rel=noopener`)
-- **config path:** `/workspace/surface-lab/money-brief/gumroad.json` (key `editorialTwin`; stub OK until CoS/Phil pastes real product URL — no HTML rebuild)
-- **JS:** `buy/gumroad.js` fetches `../money-brief/gumroad.json` and wires `[data-sku="editorialTwin"]` only
+- **Buy CTA:** “Buy — $89 CAD” → Stripe Payment Link URL from config key **`editorialTwin` only** (`target=_blank` `rel=noopener`)
+- **config path:** `/workspace/surface-lab/buy/stripe.json` (key `editorialTwin`; stub OK until CoS/Phil pastes real product URL — no HTML rebuild)
+- **JS:** `buy/buy.js` fetches `../buy/stripe.json` and wires `[data-sku="editorialTwin"]` only
 - **pack tarball:** `/workspace/surface-lab/pack-editorial-twin.tgz`
 - **gallery:** header + footer “Editorial Twin” → `buy/`; editorial card also has Buy link
 - **money-brief:** soft-redirect (meta refresh + banner) → `../buy/` — multi-SKU brief retired from public pitch
@@ -185,3 +185,8 @@ Auth, payments, real bookings, CMS, monetization checkout, NightDeck, Dungeon Da
 - Sole writer Pass 4 under `/workspace/surface-lab` only.
 - No git push from this pass unless Phil/CoS requests.
 - Design-refs refresh optional / non-blocking — skipped for this pass Done.
+
+
+## Stripe fulfill
+- Prefer Stripe Payment Link **file attach** of `pack-editorial-twin.tgz`.
+- If not attached yet: manual fulfill after pay. Config: `buy/stripe.json` key `editorialTwin`.
